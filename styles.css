@@ -7,48 +7,49 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0f1117;
-  color: #e0e0e0;
+  background-color: #0d1117;
+  color: #c9d1d9;
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background-color: #1a1c23;
+  background-color: #161b22;
   padding: 2rem;
   text-align: center;
-  border-bottom: 2px solid #2e313d;
+  border-bottom: 1px solid #30363d;
 }
 
 h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  color: #58a6ff;
 }
 
 .tagline {
   font-size: 1.2rem;
-  color: #9ca3af;
+  color: #8b949e;
 }
 
 /* Navigation */
 nav {
-  background-color: #1f2129;
+  background-color: #161b22;
   display: flex;
   justify-content: center;
   padding: 1rem;
   gap: 2rem;
-  border-bottom: 1px solid #2e313d;
+  border-bottom: 1px solid #30363d;
 }
 
 nav a {
-  color: #e0e0e0;
+  color: #c9d1d9;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #00bcd4;
+  color: #58a6ff;
 }
 
 /* Main content */
@@ -59,7 +60,7 @@ main {
 }
 
 h2 {
-  color: #00bcd4;
+  color: #58a6ff;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -74,11 +75,11 @@ p {
   margin-bottom: 1rem;
 }
 
-/* Blueprint section visuals */
+/* Blueprint visuals */
 .blueprint-img {
   width: 100%;
   max-width: 700px;
-  border: 2px solid #00bcd4;
+  border: 2px solid #58a6ff;
   border-radius: 6px;
   margin: 1rem 0;
 }
@@ -88,7 +89,7 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
-  color: #9ca3af;
-  border-top: 1px solid #2e313d;
+  color: #8b949e;
+  border-top: 1px solid #30363d;
   margin-top: 2rem;
 }
