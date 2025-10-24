@@ -15,6 +15,10 @@
   border: 2px solid #58a6ff;
   object-fit: cover;
 }
+.links i {
+  margin-right: 8px;
+  color: #58a6ff;
+}
 
 /* Sidebar (Header on Left) */
 .sidebar {
