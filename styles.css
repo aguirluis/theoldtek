@@ -1,4 +1,25 @@
-/* Base Reset */
+/* ===========================
+   Theme Variables
+=========================== */
+:root {
+  --bg-color: #0d1117;
+  --text-color: #c9d1d9;
+  --accent-color: #58a6ff;
+  --muted-color: #8b949e;
+  --border-color: #30363d;
+}
+
+body.light-theme {
+  --bg-color: #f5f5f5;
+  --text-color: #1c1c1c;
+  --accent-color: #007acc;
+  --muted-color: #555;
+  --border-color: #ccc;
+}
+
+/* ===========================
+   Base Reset
+=========================== */
 * {
   margin: 0;
   padding: 0;
@@ -7,28 +28,32 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Layout Container */
+/* ===========================
+   Layout
+=========================== */
 .layout {
   display: flex;
   flex-direction: row;
   min-height: 100vh;
 }
 
-/* Sidebar (Header on Left) */
+/* ===========================
+   Sidebar
+=========================== */
 .sidebar {
   width: 280px;
-  background-color: #161b22;
+  background-color: var(--bg-color);
   padding: 2rem;
-  border-right: 1px solid #30363d;
+  border-right: 1px solid var(--border-color);
   text-align: center;
 }
 
-/* Profile Image */
 .profile-img {
   margin-bottom: 1rem;
 }
@@ -37,26 +62,24 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 8px;
-  border: 2px solid #58a6ff;
+  border: 2px solid var(--accent-color);
   object-fit: cover;
   display: block;
   margin: 0 auto;
 }
 
-/* Sidebar Text */
 .sidebar h1 {
   font-size: 2rem;
-  color: #58a6ff;
+  color: var(--accent-color);
   margin: 0.5rem 0;
 }
 
 .sidebar .tagline {
   font-size: 1rem;
-  color: #8b949e;
+  color: var(--muted-color);
   margin-bottom: 1.5rem;
 }
 
-/* Sidebar Links */
 .sidebar .links {
   list-style: none;
   padding: 0;
@@ -68,24 +91,45 @@ body {
 }
 
 .sidebar .links a {
-  color: #c9d1d9;
+  color: var(--text-color);
   text-decoration: none;
-  border-bottom: 1px dashed #58a6ff;
+  border-bottom: 1px dashed var(--accent-color);
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
 .sidebar .links a:hover {
-  color: #58a6ff;
+  color: var(--accent-color);
 }
 
-/* Font Awesome Icons */
 .links i {
-  color: #58a6ff;
+  color: var(--accent-color);
 }
 
-/* Main Content */
+/* ===========================
+   Theme Toggle Button
+=========================== */
+#theme-toggle {
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+/* ===========================
+   Main Content
+=========================== */
 .content {
   flex: 1;
   padding: 2rem;
@@ -94,7 +138,7 @@ body {
 }
 
 .content h2 {
-  color: #58a6ff;
+  color: var(--accent-color);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -109,160 +153,28 @@ body {
 }
 
 .content a {
-  color: #c9d1d9;
+  color: var(--text-color);
   text-decoration: none;
-  border-bottom: 1px dashed #58a6ff;
+  border-bottom: 1px dashed var(--accent-color);
 }
 
 .content a:hover {
-  color: #58a6ff;
+  color: var(--accent-color);
 }
 
 .date {
   font-size: 0.85rem;
-  color: #6e7681;
+  color: var(--muted-color);
   margin-left: 0.5rem;
 }
 
-/* Footer */
+/* ===========================
+   Footer
+=========================== */
 footer {
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
-  color: #8b949e;
-  border-top: 1px solid #30363d;
-}
-/* Base Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
-  line-height: 1.6;
-}
-
-/* Layout Container */
-.layout {
-  display: flex;
-  flex-direction: row;
-  min-height: 100vh;
-}
-
-/* Sidebar (Header on Left) */
-.sidebar {
-  width: 280px;
-  background-color: #161b22;
-  padding: 2rem;
-  border-right: 1px solid #30363d;
-  text-align: center;
-}
-
-/* Profile Image */
-.profile-img {
-  margin-bottom: 1rem;
-}
-
-.profile-img img {
-  width: 120px;
-  height: 120px;
-  border-radius: 8px;
-  border: 2px solid #58a6ff;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Sidebar Text */
-.sidebar h1 {
-  font-size: 2rem;
-  color: #58a6ff;
-  margin: 0.5rem 0;
-}
-
-.sidebar .tagline {
-  font-size: 1rem;
-  color: #8b949e;
-  margin-bottom: 1.5rem;
-}
-
-/* Sidebar Links */
-.sidebar .links {
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-}
-
-.sidebar .links li {
-  margin-bottom: 1rem;
-}
-
-.sidebar .links a {
-  color: #c9d1d9;
-  text-decoration: none;
-  border-bottom: 1px dashed #58a6ff;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.sidebar .links a:hover {
-  color: #58a6ff;
-}
-
-/* Font Awesome Icons */
-.links i {
-  color: #58a6ff;
-}
-
-/* Main Content */
-.content {
-  flex: 1;
-  padding: 2rem;
-  max-width: 800px;
-  margin: auto;
-}
-
-.content h2 {
-  color: #58a6ff;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.content li {
-  margin-bottom: 1.2rem;
-}
-
-.content a {
-  color: #c9d1d9;
-  text-decoration: none;
-  border-bottom: 1px dashed #58a6ff;
-}
-
-.content a:hover {
-  color: #58a6ff;
-}
-
-.date {
-  font-size: 0.85rem;
-  color: #6e7681;
-  margin-left: 0.5rem;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  color: #8b949e;
-  border-top: 1px solid #30363d;
+  color: var(--muted-color);
+  border-top: 1px solid var(--border-color);
 }
