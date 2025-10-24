@@ -7,37 +7,34 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="profile-header">
-    <div class="profile-image">
-      <link rel="icon" type="image/png" href="./avatar.png" />
-  </div>
-    <div class="profile-text">
+  <div class="layout">
+    <aside class="sidebar">
       <h1>TheOldTek</h1>
       <p class="tagline">System Admin • Cybersecurity • Home Lab Architect</p>
-    </div>
-  </header>
-
-  <main>
-    <section>
-      <h2>👋 Welcome</h2>
-      <p>I’m Luis, a Strategic IT Systems Engineer and U.S. Army veteran. I specialize in Active Directory, RBAC, VLAN segmentation, and automation — blending enterprise rigor with home lab creativity.</p>
-    </section>
-
-    <section>
-      <h2>📝 Featured Posts</h2>
-      <ul>
-        <li><a href="/posts/samba-recovery.html">Recovering Samba AD DC with DNS & Kerberos</a> <span>Oct 2025</span></li>
-        <li><a href="/posts/vlans.html">Designing aVLAN with DNS Filtering</a> <span>Sep 2025</span></li>
-        <li><a href="/posts/docker-stack.html">Self-Hosting with Docker, Portainer & Guacamole</a> <span>Aug 2025</span></li>
-        <li><a href="/posts/ad-provisioning.html">Provisioning Playbook: OU Maps & Naming Conventions</a> <span>Jul 2025</span></li>
+      <ul class="links">
+        <li><a href="https://github.com/aguirluis" target="_blank">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/aguirluis" target="_blank">LinkedIn</a></li>
+        <li><a href="/about.html">About</a></li>
       </ul>
-    </section>
+    </aside>
 
-    <section>
-      <h2>📘 About Me</h2>
-      <p><a href="/about.html">Learn more</a> about my background, skills, and creative branding journey.</p>
-    </section>
-  </main>
+    <main class="content">
+      <section>
+        <h2>👋 Welcome</h2>
+        <p>I’m Luis, a Strategic IT Systems Engineer and U.S. Army veteran. I specialize in Active Directory, RBAC, VLAN segmentation, and automation — blending enterprise rigor with home lab creativity.</p>
+      </section>
+
+      <section>
+        <h2>📝 Featured Posts</h2>
+        <ul>
+          <li><a href="/posts/samba-recovery.html">Recovering Samba AD DC with DNS & Kerberos</a> <span class="date">Oct 2025</span></li>
+          <li><a href="/posts/kids-vlan.html">Designing a Kids VLAN with DNS Filtering</a> <span class="date">Sep 2025</span></li>
+          <li><a href="/posts/docker-stack.html">Self-Hosting with Docker, Portainer & Guacamole</a> <span class="date">Aug 2025</span></li>
+          <li><a href="/posts/ad-provisioning.html">Provisioning Playbook: OU Maps & Naming Conventions</a> <span class="date">Jul 2025</span></li>
+        </ul>
+      </section>
+    </main>
+  </div>
 
   <footer>
     <p>© 2025 TheOldTek | Built with GitHub Pages</p>
