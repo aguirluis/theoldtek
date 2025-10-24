@@ -97,6 +97,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  transition: color 0.3s ease;
 }
 
 .sidebar .links a:hover {
@@ -112,19 +113,23 @@ body {
 =========================== */
 #theme-toggle {
   margin-top: 2rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   background-color: transparent;
-  border: 1px solid var(--accent-color);
+  border: none;
   color: var(--accent-color);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   cursor: pointer;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 #theme-toggle:hover {
-  background-color: var(--accent-color);
-  color: var(--bg-color);
+  color: var(--text-color);
+  transform: rotate(20deg);
+}
+
+#theme-toggle i {
+  pointer-events: none;
 }
 
 /* ===========================
@@ -156,6 +161,7 @@ body {
   color: var(--text-color);
   text-decoration: none;
   border-bottom: 1px dashed var(--accent-color);
+  transition: color 0.3s ease;
 }
 
 .content a:hover {
