@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -14,82 +14,70 @@ body {
 
 /* Header */
 header {
-  background-color: #161b22;
-  padding: 2rem;
+  padding: 4rem 2rem 2rem;
   text-align: center;
-  border-bottom: 1px solid #30363d;
 }
 
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
   color: #58a6ff;
+  margin-bottom: 0.5rem;
 }
 
 .tagline {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #8b949e;
 }
 
-/* Navigation */
-nav {
-  background-color: #161b22;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  gap: 2rem;
-  border-bottom: 1px solid #30363d;
-}
-
-nav a {
-  color: #c9d1d9;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #58a6ff;
-}
-
-/* Main content */
+/* Main Content */
 main {
-  padding: 2rem;
-  max-width: 800px;
-  margin: auto;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
 }
 
 h2 {
+  font-size: 1.5rem;
   color: #58a6ff;
-  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
+/* Lists */
 ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
+  list-style: none;
+  padding: 0;
 }
 
-p {
-  margin-bottom: 1rem;
+li {
+  margin-bottom: 1.2rem;
 }
 
-/* Blueprint visuals */
-.blueprint-img {
-  width: 100%;
-  max-width: 700px;
-  border: 2px solid #58a6ff;
-  border-radius: 6px;
-  margin: 1rem 0;
+a {
+  color: #c9d1d9;
+  text-decoration: none;
+  border-bottom: 1px dashed #58a6ff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #58a6ff;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: #6e7681;
+  margin-left: 0.5rem;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   font-size: 0.9rem;
   color: #8b949e;
   border-top: 1px solid #30363d;
-  margin-top: 2rem;
 }
