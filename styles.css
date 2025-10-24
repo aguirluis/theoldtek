@@ -4,6 +4,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.profile-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #58a6ff;
+  object-fit: cover;
+}
+
+.profile-text h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #58a6ff;
+}
+
+.profile-text .tagline {
+  font-size: 1rem;
+  color: #8b949e;
+}
 
 body {
   font-family: 'Segoe UI', sans-serif;
