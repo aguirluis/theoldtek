@@ -47,11 +47,22 @@ body {
    Sidebar
 =========================== */
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
   width: 280px;
   background-color: var(--bg-color);
   padding: 2rem;
   border-right: 1px solid var(--border-color);
   text-align: center;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-img {
@@ -80,39 +91,18 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.sidebar .links {
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-}
-
-.sidebar .links li {
-  margin-bottom: 1rem;
-}
-
-.sidebar .links a {
-  color: var(--text-color);
-  text-decoration: none;
-  border-bottom: 1px dashed var(--accent-color);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.3s ease;
-}
-
-.sidebar .links a:hover {
-  color: var(--accent-color);
-}
-
-.links i {
-  color: var(--accent-color);
-}
-
 /* ===========================
-   Theme Toggle Button
+   Sidebar Bottom: Toggle + Links
 =========================== */
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+
 #theme-toggle {
-  margin-top: 2rem;
   padding: 0.5rem;
   background-color: transparent;
   border: none;
@@ -130,6 +120,33 @@ body {
 
 #theme-toggle i {
   pointer-events: none;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+}
+
+.links li {
+  margin-bottom: 0.5rem;
+}
+
+.links a {
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--accent-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--accent-color);
+}
+
+.links i {
+  color: var(--accent-color);
 }
 
 /* ===========================
@@ -184,6 +201,7 @@ footer {
   color: var(--muted-color);
   border-top: 1px solid var(--border-color);
 }
+
 /* ===========================
    Mobile Responsiveness
 =========================== */
@@ -194,6 +212,7 @@ footer {
 
   .sidebar {
     width: 100%;
+    height: auto;
     border-right: none;
     border-bottom: 1px solid var(--border-color);
     padding: 1.5rem;
@@ -212,15 +231,15 @@ footer {
     font-size: 0.95rem;
   }
 
-  .sidebar .links {
+  .sidebar-bottom {
+    margin-top: 2rem;
+  }
+
+  .links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-  }
-
-  #theme-toggle {
-    margin-top: 1rem;
   }
 
   .content {
@@ -241,4 +260,3 @@ footer {
     font-size: 0.85rem;
   }
 }
-
