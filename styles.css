@@ -295,3 +295,47 @@ footer {
     font-size: 0.85rem;
   }
 }
+/* Filter Buttons */
+.filter-buttons {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-color);
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.filter-buttons button:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+/* Project Cards with Images and Tags */
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.tags {
+  margin: 0.5rem 0;
+}
+
+.tags span {
+  display: inline-block;
+  background-color: var(--border-color);
+  color: var(--text-color);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
