@@ -11,30 +11,31 @@
 <body>
   <div class="layout">
     <aside class="sidebar">
-      <div class="sidebar-top">
-        <div class="profile-img">
-          <img src="./avatar.png" alt="Luis E. Aguirre avatar" />
+      <div class="sidebar-upper">
+        <div class="sidebar-top">
+          <div class="profile-img">
+            <img src="./avatar.png" alt="Luis E. Aguirre avatar" />
+          </div>
+          <h1>TheOldTek</h1>
+          <p class="tagline">System Admin • Cybersecurity • Home Lab Architect</p>
         </div>
-        <h1>TheOldTek</h1>
-        <p class="tagline">System Admin • Cybersecurity • Home Lab Architect</p>
-      </div>
+
         <div class="sidebar-middle">
-  <nav class="nav-links">
-    <ul>
-      <li><a href="/home.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="/home.html"><i class="fas fa-folder-open"></i> Projects</a></li>
-      <li><a href="/blog.html"><i class="fas fa-pen-nib"></i> Blog</a></li>
-      <li><a href="/tools.html"><i class="fas fa-wrench"></i> Tools</a></li>
-      <li><a href="/about.html"><i class="fas fa-person"></i> About</a></li>
-      <li><a href="/contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-    </ul>
-  </nav>
-</div>
+          <nav class="nav-links">
+            <ul>
+              <li><a href="/projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+              <li><a href="/blog.html"><i class="fas fa-pen-nib"></i> Blog</a></li>
+              <li><a href="/tools.html"><i class="fas fa-wrench"></i> Tools</a></li>
+              <li><a href="/contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
 
       <div class="sidebar-bottom">
         <ul class="links">
           <li><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a href="https://linkedin.com/in/luis-aguirre01" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://linkedin.com/in/aguirluis" target="_blank"><i class="fab fa-linkedin"></i></a></li>
           <li><a href="/about.html"><i class="fas fa-user"></i></a></li>
           <li><button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
         </ul>
@@ -44,45 +45,49 @@
     <div class="main-area">
       <main class="content">
         <h2>Projects</h2>
-
-        
         <div class="project-grid">
           <div class="project-card">
             <h3>Home Lab Blueprint</h3>
-            <p>Enterprise-grade home lab with AD, PKI.</p>
+            <p>Enterprise-grade home lab with AD, PKI, and hybrid cloud integrations.</p>
             <a href="/projects/homelab.html">View Project →</a>
           </div>
 
-        
-           <div class="project-card">
+          <div class="project-card">
             <h3>TheOldTek Website</h3>
             <p>Custom GitHub Pages site with dark/light mode, pixel avatar, and responsive layout.</p>
             <a href="/projects/website.html">View Project →</a>
           </div>
-          
-           <div class="project-card">
+
+          <div class="project-card">
             <h3>IAM Automation Scripts</h3>
             <p>PowerShell and Python tools for managing AD, ADFS, and privileged access workflows.</p>
             <a href="/projects/iam-tools.html">View Project →</a>
           </div>
-            
-         
-           <div class="project-card">
-            <h3>IAM Automation Scripts</h3>
-            <p>PowerShell and Python tools for managing AD, ADFS, and privileged access workflows.</p>
-            <a href="/projects/iam-tools.html">View Project →</a>
-          </div>
-      
         </div>
       </main>
 
       <footer>
-
-         <p>© 2025 TheOldTek | Built with GitHub Pages</p>
+        <p>© 2025 TheOldTek | Built with GitHub Pages</p>
+        <div class="certifications">
+          <h4>Certifications</h4>
+          <ul class="cert-list">
+            <li>
+              <img src="./certs/comptia-aplus.png" alt="CompTIA A+ Certification" />
+              <span>CompTIA A+</span>
+            </li>
+            <li>
+              <img src="./certs/comptia-securityplus.png" alt="CompTIA Security+ Certification" />
+              <span>CompTIA Security+</span>
+            </li>
+            <li>
+              <img src="./certs/az900.png" alt="Microsoft AZ-900 Certification" />
+              <span>Microsoft Azure Fundamentals (AZ-900)</span>
+            </li>
+          </ul>
+        </div>
       </footer>
     </div>
   </div>
 
   <script src="./theme.js"></script>
 </body>
-</html>
