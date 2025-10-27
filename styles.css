@@ -127,9 +127,9 @@ a:hover {
 .social-links {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
   padding: 0;
 }
 
@@ -148,7 +148,7 @@ a:hover {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   transition: color 0.3s;
 }
 
@@ -301,8 +301,9 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .layout {
+  .social-links{
     flex-direction: column;
+    align-items: center;
   }
 
   .sidebar {
