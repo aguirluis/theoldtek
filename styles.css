@@ -132,7 +132,7 @@ body {
 
 /* Footer */
 footer {
-  padding: 1rem;
+  padding: 0rem;
   background-color: var(--bg-secondary);
   text-align: center;
   font-size: 0.85rem;
