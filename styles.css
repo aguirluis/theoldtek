@@ -257,7 +257,7 @@ footer {
 }
 
 .certifications img {
-  width: 40px;
+  width: 10px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 2px rgba(0,0,0,0.3));
