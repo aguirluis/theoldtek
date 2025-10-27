@@ -120,13 +120,46 @@ a:hover {
 }
 
 /* Sidebar Bottom */
-.sidebar-bottom ul {
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.social-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
+  align-items: flex-start;
+  gap: 1rem;
   padding: 0;
+}
+
+.social-links li {
+  display: flex;
+  align-items: center;
+}
+
+.social-links a,
+.social-links button {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover,
+.social-links button:hover {
+  color: var(--accent-color);
+}
+
+.social-links i {
+  font-size: 1.2rem;
+  color: var(--accent-color);
 }
 
 .sidebar-bottom i {
