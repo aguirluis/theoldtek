@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
+<body id="top">
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-upper">
@@ -23,8 +23,10 @@
         <div class="sidebar-middle">
           <nav class="nav-links">
             <ul>
-              <li><a href="./index.html"><i class="fas fa-house"></i> Home</a></li>
-              <li><a href="./about.html"><i class="fas fa-circle-exclamation"></i> About</a></li>
+              <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="./about.html"><i class="fas fa-user"></i> About</a></li>
+              <li><a href="./blog.html"><i class="fas fa-pen-nib"></i> Blog</a></li>
+              <li><a href="./tools.html"><i class="fas fa-wrench"></i> Tools</a></li>
               <li><a href="./contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
           </nav>
@@ -35,66 +37,81 @@
         <ul class="links">
           <li><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i></a></li>
           <li><a href="https://linkedin.com/in/aguirluis" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-          <li><a href="./about.html"><i class="fas fa-user"></i></a></li>
           <li><button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
         </ul>
       </div>
     </aside>
 
     <div class="main-area">
-  <main class="content">
-  <h2>Home</h2>
+      <main class="content">
+        <h2>Projects</h2>
 
-  <div class="project-list">
-    <!-- Project 1 -->
-    <section class="project-card" id="website">
-      <h3>TheOldTek Website</h3>
-      <p>This project is the foundation of my personal brand—blending technical rigor with creative expression. Built with GitHub Pages and custom CSS, it showcases my skills in responsive design, theme toggling, and pixel/blueprint aesthetics.</p>
-      <ul>
-        <li>Dark/light theme toggle with dynamic icon</li>
-        <li>Sidebar layout with top/middle/bottom sections</li>
-        <li>Responsive project cards with hover effects</li>
-        <li>Pixel-style avatar and favicon</li>
-        <li>Blueprint-inspired color palette and certification icons</li>
-      </ul>
-      <p><a href="#top">↑ Back to Top</a></p>
-    </section>
+        <div class="project-list">
+          <!-- Project 1 -->
+          <section class="project-card" id="website">
+            <h3>TheOldTek Website</h3>
+            <p>This project is the foundation of my personal brand—blending technical rigor with creative expression. Built with GitHub Pages and custom CSS, it showcases my skills in responsive design, theme toggling, and pixel/blueprint aesthetics.</p>
+            <ul>
+              <li>Dark/light theme toggle with dynamic icon</li>
+              <li>Sidebar layout with top/middle/bottom sections</li>
+              <li>Responsive project cards with hover effects</li>
+              <li>Pixel-style avatar and favicon</li>
+              <li>Blueprint-inspired color palette and certification icons</li>
+            </ul>
+            <p><a href="#top">↑ Back to Top</a></p>
+          </section>
 
-    <!-- Project 2 -->
-    <section class="project-card" id="homelab">
-      <h3>Home Lab Blueprint</h3>
-      <p>Enterprise-grade home lab with AD, PKI, and hybrid cloud integrations. Designed to mirror real-world infrastructure and security practices.</p>
-      <ul>
-        <li>Active Directory, Group Policy, PKI, RBAC</li>
-        <li>Privileged Access Management (PAM)</li>
-        <li>Hybrid cloud integration with Azure</li>
-        <li>Visual documentation and blueprint-style diagrams</li>
-      </ul>
-      <p><a href="#top">↑ Back to Top</a></p>
-    </section>
+          <!-- Project 2 -->
+          <section class="project-card" id="homelab">
+            <h3>Home Lab Blueprint</h3>
+            <p>Enterprise-grade home lab with AD, PKI, and hybrid cloud integrations. Designed to mirror real-world infrastructure and security practices.</p>
+            <ul>
+              <li>Active Directory, Group Policy, PKI, RBAC</li>
+              <li>Privileged Access Management (PAM)</li>
+              <li>Hybrid cloud integration with Azure</li>
+              <li>Visual documentation and blueprint-style diagrams</li>
+            </ul>
+            <p><a href="#top">↑ Back to Top</a></p>
+          </section>
 
-    <!-- Project 3 -->
-    <section class="project-card" id="iam-tools">
-      <h3>IAM Automation Scripts</h3>
-      <p>PowerShell and Python tools for managing AD, ADFS, and privileged access workflows. Built for repeatability, security, and clarity.</p>
-      <ul>
-        <li>Automated provisioning and deprovisioning</li>
-        <li>AD group membership audits</li>
-        <li>ADFS claim rule management</li>
-        <li>Scripted RBAC enforcement</li>
-      </ul>
-      <p><a href="#top">↑ Back to Top</a></p>
-    </section>
-  </div>
-</main>
+          <!-- Project 3 -->
+          <section class="project-card" id="iam-tools">
+            <h3>IAM Automation Scripts</h3>
+            <p>PowerShell and Python tools for managing AD, ADFS, and privileged access workflows. Built for repeatability, security, and clarity.</p>
+            <ul>
+              <li>Automated provisioning and deprovisioning</li>
+              <li>AD group membership audits</li>
+              <li>ADFS claim rule management</li>
+              <li>Scripted RBAC enforcement</li>
+            </ul>
+            <p><a href="#top">↑ Back to Top</a></p>
+          </section>
+        </div>
+      </main>
 
       <footer>
-       
-
-         <p>© 2025 TheOldTek | Built with GitHub Pages</p>
+        <p>© 2025 TheOldTek | Built with GitHub Pages</p>
+        <div class="certifications">
+          <h4>Certifications</h4>
+          <ul class="cert-list">
+            <li>
+              <img src="./certs/comptia-aplus.png" alt="CompTIA A+ Certification" />
+              <span>CompTIA A+</span>
+            </li>
+            <li>
+              <img src="./certs/comptia-securityplus.png" alt="CompTIA Security+ Certification" />
+              <span>CompTIA Security+</span>
+            </li>
+            <li>
+              <img src="./certs/az900.png" alt="Microsoft AZ-900 Certification" />
+              <span>Microsoft Azure Fundamentals (AZ-900)</span>
+            </li>
+          </ul>
+        </div>
       </footer>
     </div>
   </div>
 
   <script src="./theme.js"></script>
 </body>
+</html>
