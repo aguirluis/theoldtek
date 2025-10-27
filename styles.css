@@ -237,7 +237,30 @@ footer {
   color: var(--muted-color);
   border-top: 1px solid var(--border-color);
 }
+.certifications {
+  margin-top: 2rem;
+  text-align: center;
+}
 
+.certifications h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+.certifications ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.certifications img {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.3));
 /* ===========================
    Mobile Responsiveness
 =========================== */
