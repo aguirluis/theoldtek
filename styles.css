@@ -155,7 +155,15 @@ body {
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.3s, border 0.3s;
+  border: 1px solid transparent;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border: 1px solid var(--accent-color);
+  background-color: var(--bg-primary);
 }
 @media (max-width: 768px) {
   .sidebar {
