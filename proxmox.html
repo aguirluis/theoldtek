@@ -43,43 +43,49 @@
       </div>
     </aside>
 
-    <!-- Main Content -->
-    <div class="main-area">
+  <div class="main-area">
       <main class="content">
-        <section aria-labelledby="projects">
-          <h2 id="projects">My Projects</h2>
-          <p>Explore detailed write-ups of my technical and creative projects:</p>
+        <article>
+          <h2>Proxmox Home Lab</h2>
+          <p>
+            Enterprise-grade virtualization at home using Proxmox VE, pfSense, and TrueNAS. 
+            This lab simulates production infrastructure for testing cybersecurity workflows and identity management solutions.
+          </p>
 
-          <div class="project-list">
-            <!-- Project 1 -->
-            <section class="project-card" id="proxmox">
-              <h3>Proxmox Home Lab</h3>
-              <p>Enterprise-grade virtualization at home with Proxmox VE, pfSense, and TrueNAS.</p>
-              <p><a href="./projects/proxmox.html">Learn More →</a></p>
-            </section>
+          <h3>🔧 Tools & Technologies</h3>
+          <ul>
+            <li>Proxmox VE</li>
+            <li>pfSense Firewall</li>
+            <li>TrueNAS Storage</li>
+            <li>Automation Scripts (Bash/Python)</li>
+          </ul>
 
-            <!-- Project 2 -->
-            <section class="project-card" id="dietpi">
-              <h3>Samba ADDC on Raspberry Pi (DietPi)</h3>
-              <p>Lightweight Active Directory Domain Controller using Samba 4 on DietPi.</p>
-              <p><a href="./projects/dietpi.html">Learn More →</a></p>
-            </section>
+          <h3>📐 Architecture / Setup</h3>
+          <p>
+            The lab runs on a dedicated server with Proxmox managing multiple VMs. 
+            pfSense provides firewalling and routing, while TrueNAS handles storage. 
+            Automated scripts deploy VMs with predefined configurations.
+          </p>
+          <img src="../img/proxmox-screenshot.png" alt="Screenshot of Proxmox Home Lab" />
 
-            <!-- Project 3 -->
-            <section class="project-card" id="iam-tools">
-              <h3>IAM Automation Scripts</h3>
-              <p>PowerShell and Python tools for managing AD, ADFS, and privileged access workflows.</p>
-              <p><a href="./projects/iam-tools.html">Learn More →</a></p>
-            </section>
+          <h3>⚡ Challenges & Solutions</h3>
+          <p>
+            Challenge: Efficient VM deployment without manual setup.  
+            Solution: Automated provisioning scripts reduced setup time by 40%.
+          </p>
 
-            <!-- Project 4 -->
-            <section class="project-card" id="website">
-              <h3>TheOldTek Website</h3>
-              <p>My personal brand site built with GitHub Pages and custom CSS.</p>
-              <p><a href="./projects/website.html">Learn More →</a></p>
-            </section>
-          </div>
-        </section>
+          <h3>🚀 Outcome / Impact</h3>
+          <p>
+            Created a scalable, secure home lab environment that mirrors enterprise infrastructure. 
+            Improved testing workflows and provided a sandbox for cybersecurity experiments.
+          </p>
+
+          <h3>📂 Resources</h3>
+          <ul>
+            <li><a href="https://github.com/aguirluis/proxmox-lab" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            <li><a href="../projects.html">← Back to Projects</a></li>
+          </ul>
+        </article>
       </main>
 
       <footer>
