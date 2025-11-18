@@ -61,14 +61,23 @@
             </section>
 
             <!-- Project 2 -->
-            <section class="project-card" id="homelab">
-              <h3>Home Lab Blueprint</h3>
-              <p>Enterprise-grade home lab with AD, PKI, and hybrid cloud integrations. Designed to mirror real-world infrastructure and security practices.</p>
+            <section class="project-card" id="dietpi-samba-addc">
+              <h3>DietPi Samba ADDC on Raspberry Pi</h3>
+              <p>
+                Lightweight Active Directory Domain Controller using Samba 4 on DietPi, ideal for labs and homelabs where you want full domain services without heavy hardware.
+              </p>
               <ul>
-                <li>Active Directory, Group Policy, PKI, RBAC</li>
-                <li>Privileged Access Management (PAM)</li>
-                <li>Visual documentation and blueprint-style diagrams</li>
+                <li>Minimal OS footprint with DietPi</li>
+                <li>Samba 4 Active Directory Domain Controller</li>
+                <li>Kerberos and DNS integration</li>
+                <li>Domain provisioning for users and groups</li>
+                <li>Runs efficiently on Raspberry Pi 4+</li>
               </ul>
+              <div class="project-card__code">
+                <pre><code>sudo apt-get update
+                 sudo apt-get install samba samba-dsdb-modules samba-vfs-modules \
+                winbind libpam-winbind libnss-winbind krb5-user</code></pre>
+              </div>
               <p><a href="#top">↑ Back to Top</a></p>
             </section>
 
