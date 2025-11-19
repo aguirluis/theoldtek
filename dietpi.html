@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | TheOldTek</title>
+  <meta name="description" content="Explore projects by Luis E. Aguirre (TheOldTek) including Proxmox Home Lab, Samba ADDC, IAM Automation Scripts, and personal website design." />
+  <link rel="icon" type="image/png" href="./img/favicon.png" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+<body id="top">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-upper">
+        <div class="sidebar-top">
+          <div class="profile-img">
+            <img src="./img/avatar.png" alt="Luis E. Aguirre avatar" />
+          </div>
+          <h1>TheOldTek</h1>
+          <p class="tagline">System Admin • Cybersecurity • Home Lab Architect</p>
+        </div>
+
+        <div class="sidebar-middle">
+          <nav class="nav-links">
+            <ul>
+              <li><a href="./index.html" aria-current="page"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="./about.html"><i class="fas fa-user"></i> About</a></li>
+              <li><a href="mailto:aguirluis@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <ul class="social-links">
+          <li><a href="https://github.com/aguirluis" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://linkedin.com/in/luis-aguirre01" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="mailto:aguirluis@gmail.com" aria-label="Email"><i class="fab fa-google"></i></a></li>
+          <li><button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
+        </ul>
+      </div>
+    </aside>
+
+  <div class="main-area">
+   <main class="content">
+        <article>
+          <h2>Samba ADDC on Raspberry Pi (DietPi)</h2>
+          <p>
+            A lightweight Active Directory Domain Controller (ADDC) running on a Raspberry Pi 4 using DietPi. 
+            This project demonstrates how to deliver full domain services in a compact, energy-efficient, and cost-effective setup — perfect for homelabs and testing environments.
+          </p>
+
+          <h3>🔧 Tools & Technologies</h3>
+          <ul>
+            <li>Raspberry Pi 4 (4GB+ RAM)</li>
+            <li>DietPi (minimal Debian-based OS)</li>
+            <li>Samba 4 Active Directory Domain Controller</li>
+            <li>Kerberos & DNS integration</li>
+          </ul>
+
+          <h3>📐 Architecture / Setup</h3>
+          <p>
+            The Raspberry Pi 4 runs DietPi, chosen for its minimal footprint and performance optimization. 
+            Samba 4 is configured as an ADDC, providing domain services such as user/group provisioning, Kerberos authentication, and DNS resolution. 
+            The setup mirrors enterprise AD functionality while consuming minimal hardware resources.
+          </p>
+          <img src="../img/dietpi-addc.png" alt="Diagram of Raspberry Pi DietPi Samba ADDC setup" />
+
+          <h3>⚡ Challenges & Solutions</h3>
+          <p>
+            <strong>Challenge:</strong> Running a full ADDC on limited hardware.  
+            <strong>Solution:</strong> Leveraged DietPi’s lightweight OS and optimized Samba configuration to ensure stability and performance.  
+            <strong>Challenge:</strong> Integrating Kerberos and DNS.  
+            <strong>Solution:</strong> Configured Samba’s internal DNS and Kerberos to work seamlessly with domain provisioning.
+          </p>
+
+          <h3>🚀 Outcome / Impact</h3>
+          <p>
+            The project delivers a fully functional Active Directory environment on a Raspberry Pi 4. 
+            It enables testing of group policies, RBAC, and domain authentication workflows without requiring enterprise-grade servers. 
+            This setup is ideal for homelab enthusiasts and cybersecurity professionals experimenting with IAM solutions.
+          </p>
+
+          <h3>📂 Resources</h3>
+          <ul>
+            <li><a href="https://github.com/aguirluis" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            <li><a href="./index.html">← Back to Home</a></li>
+          </ul>
+        </article>
+      </main>
+
+      <footer>
+        <p>© 2025 TheOldTek | Built with GitHub Pages</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="./js/theme.js"></script>
+</body>
+</html>
