@@ -45,50 +45,49 @@
 
   <div class="main-area">
    <main class="content">
-        <article>
-          <h2>Samba ADDC on Raspberry Pi (DietPi)</h2>
-          <p>
-            A lightweight Active Directory Domain Controller (ADDC) running on a Raspberry Pi 4 using DietPi. 
-            This project demonstrates how to deliver full domain services in a compact, energy-efficient, and cost-effective setup — perfect for homelabs and testing environments.
-          </p>
+   <article>
+  <h2>Samba ADDC on Raspberry Pi (DietPi)</h2>
+  <p>
+    This project showcases how to build a lightweight Active Directory Domain Controller (ADDC) on a Raspberry Pi 4 using DietPi — specifically tailored for home network environments and homelab experimentation. It demonstrates that enterprise-grade identity and access management can be replicated in a compact, energy‑efficient, and cost‑effective way.
+  </p>
 
-          <h3>🔧 Tools & Technologies</h3>
-          <ul>
-            <li>Raspberry Pi 4 (4GB+ RAM)</li>
-            <li>DietPi (minimal Debian-based OS)</li>
-            <li>Samba 4 Active Directory Domain Controller</li>
-            <li>Kerberos & DNS integration</li>
-          </ul>
+  <h3>🔧 Tools & Technologies</h3>
+  <ul>
+    <li>Raspberry Pi 4 (4GB+ RAM)</li>
+    <li>DietPi (minimal Debian-based OS)</li>
+    <li>Samba 4 Active Directory Domain Controller</li>
+    <li>Kerberos & DNS integration</li>
+  </ul>
 
-          <h3>📐 Architecture / Setup</h3>
-          <p>
-            The Raspberry Pi 4 runs DietPi, chosen for its minimal footprint and performance optimization. 
-            Samba 4 is configured as an ADDC, providing domain services such as user/group provisioning, Kerberos authentication, and DNS resolution. 
-            The setup mirrors enterprise AD functionality while consuming minimal hardware resources.
-          </p>
-          <img src="../img/dietpi-addc.png" alt="Diagram of Raspberry Pi DietPi Samba ADDC setup" />
+  <h3>📐 Architecture / Setup</h3>
+  <p>
+    The Raspberry Pi 4 runs DietPi, chosen for its minimal footprint and performance optimization. 
+    Samba 4 is configured as an ADDC, delivering domain services such as user/group provisioning, Kerberos authentication, and DNS resolution. 
+    The design mirrors enterprise AD functionality while remaining lightweight enough for home network deployments.
+  </p>
+  <img src="../img/dietpi-addc.png" alt="Diagram of Raspberry Pi DietPi Samba ADDC setup" />
 
-          <h3>⚡ Challenges & Solutions</h3>
-          <p>
-            <strong>Challenge:</strong> Running a full ADDC on limited hardware.  
-            <strong>Solution:</strong> Leveraged DietPi’s lightweight OS and optimized Samba configuration to ensure stability and performance.  
-            <strong>Challenge:</strong> Integrating Kerberos and DNS.  
-            <strong>Solution:</strong> Configured Samba’s internal DNS and Kerberos to work seamlessly with domain provisioning.
-          </p>
+  <h3>⚡ Challenges & Solutions</h3>
+  <p>
+    <strong>Challenge:</strong> Running a full ADDC on limited hardware.  
+    <strong>Solution:</strong> Leveraged DietPi’s lightweight OS and tuned Samba configuration to maintain stability and performance.  
+    <strong>Challenge:</strong> Seamless Kerberos and DNS integration.  
+    <strong>Solution:</strong> Configured Samba’s internal DNS and Kerberos to align with domain provisioning, ensuring smooth authentication across the home network.
+  </p>
 
-          <h3>🚀 Outcome / Impact</h3>
-          <p>
-            The project delivers a fully functional Active Directory environment on a Raspberry Pi 4. 
-            It enables testing of group policies, RBAC, and domain authentication workflows without requiring enterprise-grade servers. 
-            This setup is ideal for homelab enthusiasts and cybersecurity professionals experimenting with IAM solutions.
-          </p>
+  <h3>🚀 Outcome / Impact</h3>
+  <p>
+    The result is a fully functional Active Directory environment hosted on a Raspberry Pi 4. 
+    It enables testing of group policies, RBAC, and domain authentication workflows without requiring enterprise‑grade servers. 
+    This setup is ideal for homelab enthusiasts, cybersecurity professionals, and anyone wanting to experiment with IAM solutions in a safe home network environment.
+  </p>
 
-          <h3>📂 Resources</h3>
-          <ul>
-            <li><a href="https://github.com/aguirluis" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
-            <li><a href="./index.html">← Back to Home</a></li>
-          </ul>
-        </article>
+  <h3>📂 Resources</h3>
+  <ul>
+    <li><a href="https://github.com/aguirluis" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+    <li><a href="./index.html">← Back to Home</a></li>
+  </ul>
+</article>
       </main>
 
       <footer>
