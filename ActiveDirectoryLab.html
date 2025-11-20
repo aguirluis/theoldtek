@@ -47,52 +47,50 @@
 
   <div class="main-area">
       <main class="content">
-        <article>
-          <h2>Active Directory Lab</h2>
-          <p>
-            This project is the foundation of my personal brand—blending technical rigor with creative expression. 
-            Built with <strong>GitHub Pages</strong> and custom CSS, it showcases my skills in responsive design, theme toggling, and blueprint-inspired aesthetics.
-          </p>
+      <article>
+  <h2>Windows Server 2019 — ADDS + RAS/NAT + DHCP</h2>
+  <p>
+    This project demonstrates how to deploy a full **Active Directory Domain Services (ADDS)** environment on Windows Server 2019, integrated with **Remote Access Services (RAS/NAT)** and **Dynamic Host Configuration Protocol (DHCP)**. The goal is to replicate enterprise‑grade identity and networking services in a <strong>home network lab</strong> for testing, learning, and cybersecurity practice.
+  </p>
 
-          <h3>🔧 Tools & Technologies</h3>
-          <ul>
-            <li>GitHub Pages (static site hosting)</li>
-            <li>Custom CSS for responsive design</li>
-            <li>Font Awesome icons</li>
-            <li>JavaScript for theme toggle</li>
-            <li>Pixel-style avatar and favicon</li>
-            <li>icons and favicon</li>
-          </ul>
+  <h3>🔧 Tools & Technologies</h3>
+  <ul>
+    <li>Windows Server 2019 Standard</li>
+    <li>Active Directory Domain Services (ADDS)</li>
+    <li>Remote Access Services (RAS) with Network Address Translation (NAT)</li>
+    <li>DHCP Server role</li>
+    <li>Hyper‑V / Proxmox for virtualization (optional)</li>
+  </ul>
 
-          <h3>📐 Architecture / Setup</h3>
-          <p>
-            The site uses a sidebar layout with top, middle, and bottom sections for navigation, profile, and social links. 
-            Project cards are styled with hover effects and responsive design principles. 
-            A JavaScript-powered theme toggle allows users to switch between light and dark modes, with dynamic icon changes.
-          </p>
-          <img src="../img/website-screenshot.png" alt="Screenshot of TheOldTek Website" />
+  <h3>📐 Architecture / Setup</h3>
+  <p>
+    The server is configured as a domain controller, providing centralized authentication and policy management. 
+    RAS/NAT is enabled to allow internal lab clients to route traffic through the server, simulating enterprise gateway functionality. 
+    DHCP automatically assigns IP addresses to lab devices, ensuring seamless integration with ADDS and NAT services.
+  </p>
+  <img src="../img/ws2019-adds-ras-dhcp.png" alt="Diagram of Windows Server 2019 ADDS + RAS/NAT + DHCP setup" />
 
-          <h3>⚡ Challenges & Solutions</h3>
-          <p>
-            <strong>Challenge:</strong> Creating a cohesive design that balances technical depth with creative branding.  
-            <strong>Solution:</strong> Developed a blueprint-inspired color palette and pixel-style graphics to unify the aesthetic.  
-            <strong>Challenge:</strong> Ensuring responsiveness across devices.  
-            <strong>Solution:</strong> Used flexible CSS grid and media queries to adapt the layout for mobile, tablet, and desktop.
-          </p>
+  <h3>⚡ Challenges & Solutions</h3>
+  <p>
+    <strong>Challenge:</strong> Integrating ADDS with DHCP and NAT in a home lab.  
+    <strong>Solution:</strong> Configured DHCP scopes to align with ADDS domain, and ensured NAT routing rules allowed domain traffic.  
+    <strong>Challenge:</strong> Managing limited hardware resources.  
+    <strong>Solution:</strong> Used virtualization and snapshots to quickly test and roll back configurations.
+  </p>
 
-          <h3>🚀 Outcome / Impact</h3>
-          <p>
-            TheOldTek Website serves as a central hub for my projects and professional identity. 
-            It demonstrates my ability to combine <em>technical depth</em> with <em>creative branding</em>, 
-            and acts as a living portfolio that evolves with my career.
-          </p>
+  <h3>🚀 Outcome / Impact</h3>
+  <p>
+    The project delivers a fully functional Windows Server 2019 environment with ADDS, DHCP, and NAT services. 
+    Lab clients can join the domain, receive IP addresses automatically, and route traffic through the server. 
+    This setup provides a realistic enterprise simulation for <strong>home network labs</strong>, ideal for practicing group policies, RBAC, and secure network design.
+  </p>
 
-          <h3>📂 Resources</h3>
-          <ul>
-            <li><a href="https://github.com/aguirluis" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
-            <li><a href="./index.html">← Back to Home</a></li>
-          </ul>
-        </article>
+  <h3>📂 Resources</h3>
+  <ul>
+    <li><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/windows-server-2019" target="_blank" rel="noopener noreferrer">Microsoft Docs — ADDS on Windows Server 2019</a></li>
+    <li><a href="./index.html">← Back to Home</a></li>
+  </ul>
+</article>
       </main>
 
       <footer>
