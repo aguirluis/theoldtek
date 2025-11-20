@@ -62,13 +62,25 @@
     <li>Proxmox for virtualization</li>
   </ul>
 
-  <h3>📐 Architecture / Setup</h3>
-  <p>
-    The server is configured as a domain controller, providing centralized authentication and policy management. 
-    RAS/NAT is enabled to allow internal lab clients to route traffic through the server, simulating enterprise gateway functionality. 
-    DHCP automatically assigns IP addresses to lab devices, ensuring seamless integration with ADDS and NAT services.
-  </p>
-  <img src="../img/ws2019-adds-ras-dhcp.png" alt="Diagram of Windows Server 2019 ADDS + RAS/NAT + DHCP setup" />
+<h3>📐 Architecture / Setup</h3>
+<p>
+  The Windows Server 2019 host is configured as the central domain controller in the home lab. 
+  It provides <strong>Active Directory Domain Services (ADDS)</strong> for identity management, 
+  <strong>DHCP</strong> for automated IP address assignment, and <strong>RAS/NAT</strong> for routing traffic between internal lab clients and external networks.
+</p>
+
+<ul>
+  <li><strong>Domain Controller (ADDS)</strong> — Manages user accounts, groups, and Group Policy Objects (GPOs).</li>
+  <li><strong>DHCP Server</strong> — Issues IP addresses dynamically to lab clients, aligned with ADDS domain scopes.</li>
+  <li><strong>RAS/NAT</strong> — Provides gateway functionality, allowing internal clients to reach external networks securely.</li>
+  <li><strong>Lab Clients</strong> — Windows 10/11 and Linux VMs join the domain, authenticate via ADDS, and receive DHCP leases.</li>
+  <li><strong>Virtualization Layer</strong> — Hosted on Hyper‑V or Proxmox, enabling snapshots, rollback, and resource isolation.</li>
+</ul>
+
+<p>
+  This architecture mirrors enterprise environments while remaining lightweight enough for a <strong>home network lab</strong>. 
+  It allows testing of authentication workflows, group policies, and secure routing in a controlled environment.
+</p>
 
   <h3>⚡ Challenges & Solutions</h3>
   <p>
