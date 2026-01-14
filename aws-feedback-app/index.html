@@ -57,42 +57,43 @@
     <button type="submit">Submit</button>
   </form>
 
-  <<script>
-  const apiUrl = 'https://u83asanvo3.execute-api.us-east-1.amazonaws.com/prod/feedback';
+  <div class="message" id="status"></div>
 
-  const form = document.getElementById('feedbackForm');
-  const statusDiv = document.getElementById('status');
+  <script>
+    const apiUrl = 'https://u83asanvo3.execute-api.us-east-1.amazonaws.com/prod/feedback';
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    statusDiv.textContent = 'Sending...';
+    const form = document.getElementById('feedbackForm');
+    const statusDiv = document.getElementById('status');
 
-    const payload = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      message: document.getElementById('message').value,
-    };
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusDiv.textContent = 'Sending...';
 
-    try {
-      const res = await fetch(apiUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+      const payload = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+      };
 
-      if (!res.ok) {
-        throw new Error('Request failed');
+      try {
+        const res = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) {
+          throw new Error('Request failed');
+        }
+
+        statusDiv.textContent = 'Thank you! Your feedback was submitted.';
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        statusDiv.textContent = 'Something went wrong. Please try again later.';
       }
-
-      statusDiv.textContent = 'Thank you! Your feedback was submitted.';
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      statusDiv.textContent = 'Something went wrong. Please try again later.';
-    }
-  });
-</script>
-div class="message" id="status"></div>
+    });
+  </script>
 
 </body>
 </html>
