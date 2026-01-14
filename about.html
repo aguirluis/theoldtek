@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Luis E. Aguirre | TheOldTek</title>
-  <meta name="description" content="About Luis E. Aguirre - Strategic IT Systems Engineer, Cybersecurity, and Home Lab Architect." />
+  <title>About | TheOldTek</title>
+  <meta name="description" content="About Luis E. Aguirre — Cloud System Admin, Cybersecurity Enthusiast, and Home Lab Architect." />
   <link rel="icon" type="image/png" href="./img/favicon.png" />
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
+
+<body id="top">
   <div class="layout">
+
+    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-upper">
         <div class="sidebar-top">
@@ -18,14 +21,14 @@
             <img src="./img/avatar.png" alt="Luis E. Aguirre avatar" />
           </div>
           <h1>TheOldTek</h1>
-          <p class="tagline">System Admin • Cybersecurity • Home Lab Architect</p>
+          <p class="tagline">Cloud System Admin • Cybersecurity • Home Lab Architect</p>
         </div>
 
         <div class="sidebar-middle">
           <nav class="nav-links">
             <ul>
               <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-              <li><a href="./about.html"><i class="fas fa-user"></i> About</a></li>
+              <li><a href="./about.html" class="active"><i class="fas fa-user"></i> About</a></li>
               <li><a href="./blog.html"><i class="fas fa-pen"></i> Blog</a></li>
               <li><a href="mailto:aguirluis@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
@@ -35,60 +38,57 @@
 
       <div class="sidebar-bottom">
         <ul class="social-links">
-          <li><a href="https://github.com/aguirluis" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
-          <li><a href="https://linkedin.com/in/luis-aguirre01" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-          <li><a href="mailto:aguirluis@gmail.com" aria-label="Email"><i class="fab fa-google"></i></a></li>
-          <li><button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
+          <li><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://linkedin.com/in/luis-aguirre01" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="mailto:aguirluis@gmail.com"><i class="fab fa-google"></i></a></li>
+          <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
         </ul>
       </div>
     </aside>
 
+    <!-- Main Content -->
     <div class="main-area">
       <main class="content">
-<article>
-  <h2>About Me</h2>
-  <p>
-    Hi, I'm <strong>Luis E. Aguirre</strong> — an IT professional with over <strong>15 years of experience</strong> spanning PC support, system administration, and cybersecurity engineering. My journey reflects a steady progression from hands-on troubleshooting to strategic identity and access management, all backed by an active <strong>Security Clearance</strong> and industry certifications.
-  </p>
+        <h2>About Me</h2>
 
-  <h3>🧠 Career Timeline</h3>
-  <ul>
-    <li><strong>Identity Cyber Systems Engineer</strong> at Leidos — 1 year 4 months</li>
-    <li><strong>System Administrator II</strong> at General Atomics — 2 years</li>
-    <li><strong>PC Support Technician</strong> — 2005 to 2017 (12 years)</li>
-  </ul>
+        <p>
+          I'm <strong>Luis E. Aguirre</strong>, also known as <strong>TheOldTek</strong> — a Cloud System Administrator,
+          cybersecurity enthusiast, and home lab architect passionate about building reliable, scalable, and secure systems.
+        </p>
 
-  <h3>🔧 Certifications & Credentials</h3>
-  <ul>
-    <li>Active Security Clearance</li>
-    <li>CompTIA A+</li>
-    <li>CompTIA Security+ CE (DoD 8570 IAT II compliant)</li>
-    <li>Microsoft Certified: Azure Fundamentals</li>
-  </ul>
+        <p>
+          My journey started with tinkering on old hardware and evolved into designing full enterprise-style labs using
+          Proxmox, pfSense, TrueNAS, Azure, AWS, and identity management systems like Samba AD DS and Windows Server.
+        </p>
 
-  <h3>💡 Technical Strengths</h3>
-  <ul>
-    <li>Active Directory, ADFS, Group Policy, PKI, RBAC, PAM</li>
-    <li>Mainframe security (CA Top Secret)</li>
-    <li>Web development troubleshooting (CSS, GitHub Pages)</li>
-    <li>Visual documentation, blueprinting, and UI/UX design</li>
-  </ul>
+        <h3>What I Do</h3>
+        <ul>
+          <li>Cloud engineering (AWS + Azure)</li>
+          <li>Identity & access management</li>
+          <li>Homelab architecture & virtualization</li>
+          <li>Automation & scripting</li>
+          <li>Cybersecurity fundamentals</li>
+        </ul>
 
-  <h3>🎨 Creative Persona</h3>
-  <ul>
-    <li>Pixel-style tech hero branding for TheOldTek</li>
-    <li>Retro/blueprint-inspired web design</li>
-    <li>Stylized avatars, certification icons, and favicon creation</li>
-    <li>Responsive layouts with theme toggles and interactive features</li>
-  </ul>
+        <h3>My Philosophy</h3>
+        <p>
+          I believe in learning by building. Every project on this site represents something I deployed, broke, fixed,
+          automated, or improved. My goal is to share what I learn and help others build their own labs and cloud projects.
+        </p>
 
-  <h3>🚀 What Drives Me</h3>
-  <p>
-    I thrive at the intersection of <strong>infrastructure, identity, and creativity</strong>. Whether building a <strong>home lab with enterprise-grade rigor</strong> or designing a responsive personal site, I enjoy blending technical depth with playful self-expression. My goal is to deliver polished, purposeful digital experiences while continuously learning and sharing knowledge with the community.
-  </p>
+        <h3>Certifications</h3>
+        <ul>
+          <li>CompTIA Security+</li>
+          <li>Microsoft Azure Fundamentals</li>
+          <li>AWS Cloud Practitioner</li>
+        </ul>
 
-  <p><a href="./index.html">← Back to Home</a></p>
-</article>
+        <h3>Outside of Tech</h3>
+        <p>
+          When I'm not deep in a terminal or cloud console, I enjoy retro tech, gaming, and exploring new tools that push
+          my skills further.
+        </p>
+
       </main>
 
       <footer>
@@ -97,6 +97,6 @@
     </div>
   </div>
 
-  <script src="js/theme.js"></script>
+  <script src="./js/theme.js"></script>
 </body>
 </html>
