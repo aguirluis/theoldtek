@@ -6,7 +6,129 @@
   <title>Building a Serverless Feedback Form | TheOldTek</title>
   <meta name="description" content="How I built a fully serverless feedback form using AWS Lambda, API Gateway, DynamoDB, and GitHub Pages." />
   <link rel="icon" type="image/png" href="../img/favicon.png" />
+  <link rel="stylesheet" href="../css/styles.css" /><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a Serverless Feedback Form | TheOldTek</title>
+  <meta name="description" content="How I built a fully serverless feedback form using AWS Lambda, API Gateway, DynamoDB, and GitHub Pages." />
+  <link rel="icon" type="image/png" href="../img/favicon.png" />
   <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body id="top">
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-upper">
+        <div class="sidebar-top">
+          <div class="profile-img">
+            <img src="../img/avatar.png" alt="Luis E. Aguirre avatar" />
+          </div>
+          <h1>TheOldTek</h1>
+          <p class="tagline">Cloud System Admin • Cybersecurity • Home Lab Architect</p>
+        </div>
+
+        <div class="sidebar-middle">
+          <nav class="nav-links">
+            <ul>
+              <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="../about.html"><i class="fas fa-user"></i> About</a></li>
+              <li><a href="../blog.html" class="active"><i class="fas fa-pen"></i> Blog</a></li>
+              <li><a href="mailto:aguirluis@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <ul class="social-links">
+          <li><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://linkedin.com/in/luis-aguirre01" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="mailto:aguirluis@gmail.com"><i class="fab fa-google"></i></a></li>
+          <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-area">
+      <main class="content blog-post">
+        <article>
+
+          <h1>Building a Serverless Feedback Form with AWS and GitHub Pages</h1>
+          <p class="post-date">Published: 2025</p>
+
+          <p>
+            I wanted a simple way to collect feedback without running a server, managing a database,
+            or worrying about scaling. That led me to a fully serverless stack:
+            <strong>AWS Lambda</strong>, <strong>API Gateway</strong>, and <strong>DynamoDB</strong>,
+            with a static frontend hosted on <strong>GitHub Pages</strong>.
+          </p>
+
+          <h2>Architecture at a glance</h2>
+          <p>The flow looks like this:</p>
+
+          <ul>
+            <li>The user fills out a feedback form on a static HTML page.</li>
+            <li>The browser sends a <code>POST</code> request to an AWS API Gateway endpoint.</li>
+            <li>API Gateway invokes a Lambda function.</li>
+            <li>The Lambda function writes the feedback into a DynamoDB table called <code>FeedbackTable</code>.</li>
+            <li>The Lambda returns a JSON response, which the frontend shows as a success message.</li>
+          </ul>
+
+          <h2>Backend: Lambda + DynamoDB</h2>
+          <p>
+            The Lambda function is written in Node.js 22.x and uses the AWS SDK v3. It parses the incoming
+            request body, generates a unique <code>feedbackId</code>, and stores the data in DynamoDB.
+          </p>
+
+          <h2>API Gateway: Exposing the Lambda as HTTP</h2>
+          <p>
+            I created a REST API in API Gateway with a <code>POST /feedback</code> method integrated with the Lambda
+            using Lambda proxy integration. I also enabled CORS and tested the method directly in the console
+            until I consistently got a <code>200 OK</code> with a JSON success message.
+          </p>
+
+          <h2>Frontend: Static HTML on GitHub Pages</h2>
+          <p>
+            The page you're on now, <code>aws-feedback.html</code>, is a simple HTML form that sends a JSON payload
+            to the API Gateway endpoint using the Fetch API. Because the backend already handles CORS and returns
+            clean JSON, the frontend code stays very small and focused.
+          </p>
+
+          <h2>Why this approach works well</h2>
+          <ul>
+            <li><strong>No servers to manage:</strong> Lambda and DynamoDB are fully managed.</li>
+            <li><strong>Scales automatically:</strong> It can handle spikes in traffic without extra work.</li>
+            <li><strong>Cost-effective:</strong> You only pay for what you use.</li>
+            <li><strong>Simple frontend:</strong> A single static HTML file can power the entire experience.</li>
+          </ul>
+
+          <p>
+            If you submit the form below, your feedback is stored in DynamoDB in real time.
+            This small project ended up being a great way to learn how AWS services fit together
+            in a real, end-to-end workflow.
+          </p>
+
+          <p><a href="../blog.html">← Back to Blog</a></p>
+
+        </article>
+      </main>
+
+      <footer>
+        <p>© 2025 TheOldTek | Built with GitHub Pages</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="../js/theme.js"></script>
+</body>
+</html>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
