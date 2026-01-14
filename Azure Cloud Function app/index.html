@@ -1,1 +1,71 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feedback Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+    label { display: block; margin-top: 12px; }
+    input, textarea { width: 100%; padding: 8px; margin-top: 4px; }
+    button { margin-top: 16px; padding: 10px 16px; cursor: pointer; }
+    .message { margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Feedback</h1>
+  <form id="feedbackForm">
+    <label>
+      Name
+      <input type="text" id="name" required />
+    </label>
+    <label>
+      Email
+      <input type="email" id="email" required />
+    </label>
+    <label>
+      Feedback message
+      <textarea id="message" rows="4" required></textarea>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="message" id="status"></div>
+
+  <script>
+    const apiUrl = 'YOUR_API_GATEWAY_URL_HERE'; // replace later
+
+    const form = document.getElementById('feedbackForm');
+    const statusDiv = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusDiv.textContent = 'Sending...';
+
+      const payload = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+      };
+
+      try {
+        const res = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) {
+          throw new Error('Request failed');
+        }
+
+        statusDiv.textContent = 'Thank you! Your feedback was submitted.';
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        statusDiv.textContent = 'Something went wrong. Please try again later.';
+      }
+    });
+  </script>
+</body>
+</html>
