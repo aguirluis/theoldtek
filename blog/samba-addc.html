@@ -1,0 +1,45 @@
+<h1>Running a Lightweight Samba Active Directory Domain Controller on DietPi</h1>
+<p class="post-date">Published: 2025</p>
+
+<p>
+  I wanted a small, power-efficient Active Directory Domain Controller for my
+  home lab — something that didn’t require a full Windows Server installation.
+  The solution was perfect: <strong>Samba 4 on DietPi</strong> running on a
+  Raspberry Pi.
+</p>
+
+<h2>Why DietPi?</h2>
+<p>
+  DietPi is extremely lightweight, fast, and optimized for SBCs. It boots fast,
+  uses minimal RAM, and includes a simple software installer.
+</p>
+
+<h2>Provisioning the Domain</h2>
+<p>
+  Samba 4 includes a full AD DS implementation with:
+</p>
+<ul>
+  <li>Kerberos</li>
+  <li>DNS</li>
+  <li>LDAP directory services</li>
+</ul>
+
+<p>
+  After installing Samba, I provisioned a new domain using:
+</p>
+<pre><code>samba-tool domain provision --use-rfc2307 --interactive</code></pre>
+
+<h2>Integrating Clients</h2>
+<p>
+  Windows and Linux clients joined the domain without issues. Kerberos tickets
+  validated correctly, and DNS SRV records were automatically created.
+</p>
+
+<h2>Why This Setup Works</h2>
+<ul>
+  <li>Low power usage</li>
+  <li>Full AD DS functionality</li>
+  <li>Perfect for labs and testing environments</li>
+</ul>
+
+<p><a href="../blog.html">← Back to Blog</a></p>
