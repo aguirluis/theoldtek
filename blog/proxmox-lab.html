@@ -1,0 +1,43 @@
+<h1>Designing a Production-Style Home Lab with Proxmox, pfSense, and TrueNAS</h1>
+<p class="post-date">Published: 2025</p>
+
+<p>
+  My Proxmox home lab is the backbone of all my testing, automation, and
+  cybersecurity experimentation. The goal was to build an environment that feels
+  like a real enterprise network — but running entirely at home.
+</p>
+
+<h2>Core Components</h2>
+<ul>
+  <li><strong>Proxmox VE</strong> for virtualization</li>
+  <li><strong>pfSense</strong> for firewalling and routing</li>
+  <li><strong>TrueNAS</strong> for storage and NFS/SMB shares</li>
+  <li>Automated VM provisioning using shell scripts</li>
+</ul>
+
+<h2>Network Layout</h2>
+<p>
+  I created segmented VLANs for management, servers, clients, and lab networks.
+  pfSense handles DHCP, DNS forwarding, and firewall rules between segments.
+</p>
+
+<h2>Automation</h2>
+<p>
+  One of the biggest wins was automating VM creation. Using Proxmox’s CLI tools,
+  I wrote scripts that:
+</p>
+<ul>
+  <li>Create VMs from cloud-init templates</li>
+  <li>Apply CPU/RAM defaults</li>
+  <li>Attach storage and networks</li>
+  <li>Start and configure the VM automatically</li>
+</ul>
+
+<h2>Why This Lab Matters</h2>
+<ul>
+  <li>It mirrors real enterprise infrastructure.</li>
+  <li>It’s perfect for cybersecurity and identity management testing.</li>
+  <li>It saves hours of manual VM setup.</li>
+</ul>
+
+<p><a href="../blog.html">← Back to Blog</a></p>
