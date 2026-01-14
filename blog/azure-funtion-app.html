@@ -1,0 +1,52 @@
+<h1>Building a Cloud-Native Function App with Azure Functions and Cosmos DB</h1>
+<p class="post-date">Published: 2025</p>
+
+<p>
+  This project explores how to build a fully cloud-native application using
+  <strong>Azure Functions</strong>, <strong>Cosmos DB</strong>, and
+  <strong>Application Insights</strong>. The goal was to create a lightweight,
+  event-driven workflow that scales automatically and requires zero server
+  management.
+</p>
+
+<h2>Architecture Overview</h2>
+<ul>
+  <li>A static frontend triggers an HTTP Azure Function.</li>
+  <li>The Function processes the request and writes data to Cosmos DB.</li>
+  <li>Application Insights logs performance, latency, and errors.</li>
+  <li>Everything runs serverlessly with consumption-based billing.</li>
+</ul>
+
+<h2>Why Azure Functions?</h2>
+<p>
+  Azure Functions provide a clean way to run code on demand without provisioning
+  VMs or containers. The consumption plan automatically scales based on load,
+  making it ideal for unpredictable workloads.
+</p>
+
+<h2>Cosmos DB Integration</h2>
+<p>
+  Cosmos DB’s low-latency document storage pairs well with Functions. I used the
+  SQL API to store JSON objects representing user submissions. The binding model
+  made it easy to write data without manually instantiating the SDK.
+</p>
+
+<h2>Monitoring with Application Insights</h2>
+<p>
+  Application Insights gave me real-time visibility into:
+</p>
+<ul>
+  <li>Function execution times</li>
+  <li>Cold starts</li>
+  <li>Request traces</li>
+  <li>Failures and exceptions</li>
+</ul>
+
+<h2>What I Learned</h2>
+<ul>
+  <li>Azure Functions are extremely flexible for small apps.</li>
+  <li>Cosmos DB bindings simplify data access.</li>
+  <li>Monitoring is essential for understanding serverless behavior.</li>
+</ul>
+
+<p><a href="../blog.html">← Back to Blog</a></p>
