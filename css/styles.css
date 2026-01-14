@@ -226,6 +226,21 @@ a:hover {
   margin-top: 0.5rem;
   font-size: 0.85rem;
 }
+.project-card .links { 
+  margin-top: 14px;
+  padding-top: 12px; 
+  border-top: 1px
+  solid rgba(255,255,255,0.12);
+}
+.project-card .links a { 
+  display: inline-block; 
+  margin: 4px 0; 
+  font-weight: 600; 
+}
+
+.project-card .links a i { 
+  margin-right: 6px;
+}
 
 /* 🏅 Certifications */
 .certifications {
