@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body id="top">
   <div class="layout">
+
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-upper">
@@ -28,8 +30,6 @@
               <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
               <li><a href="./about.html"><i class="fas fa-user"></i> About</a></li>
               <li><a href="./blog.html"><i class="fas fa-pen"></i> Blog</a></li>
-
-              
               <li><a href="mailto:aguirluis@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
           </nav>
@@ -38,10 +38,10 @@
 
       <div class="sidebar-bottom">
         <ul class="social-links">
-          <li><a href="https://github.com/aguirluis" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
-          <li><a href="https://linkedin.com/in/luis-aguirre01" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-          <li><a href="mailto:aguirluis@gmail.com" aria-label="Email"><i class="fab fa-google"></i></a></li>
-          <li><button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
+          <li><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://linkedin.com/in/luis-aguirre01" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="mailto:aguirluis@gmail.com"><i class="fab fa-google"></i></a></li>
+          <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
         </ul>
       </div>
     </aside>
@@ -51,122 +51,137 @@
       <main class="content">
         <section aria-labelledby="projects">
           <h2 id="projects">Projects</h2>
-<div class="project-list">
 
-  <!-- Project 1 -->
-  <section class="project-card" id="aws-feedback" aria-labelledby="aws-feedback-title">
-    <h3 id="aws-feedback-title">AWS Serverless Feedback App</h3>
-    <p>
-      A fully serverless cloud application built using AWS Lambda, API Gateway, and DynamoDB.
-      This project demonstrates event-driven architecture, monitoring, and CI/CD automation.
-    </p>
-    <ul>
-      <li>AWS Lambda</li>
-      <li>API Gateway</li>
-      <li>DynamoDB</li>
-      <li>CloudWatch Monitoring</li>
-    </ul>
-    <p><a href="aws-feedback-app/index.html">View Project →</a></p>
-    <p><a href="./blog/aws-feedback.html">Blog Post →</a></p>
-    <p><a href="https://github.com/aguirluis/feedback-app" target="_blank">Source Code →</a></p>
-  </section>
+          <div class="project-list">
 
-  <!-- Project 2 -->
-  <section class="project-card" id="azure-app" aria-labelledby="azure-app-title">
-    <h3 id="azure-app-title">Pland Azure Cloud Function App</h3>
-    <p>
-      A cloud-native application built using Azure Functions, Cosmos DB, and Application Insights.
-      Showcases serverless compute, logging, and scalable data storage.
-    </p>
-    <ul>
-      <li>Azure Functions</li>
-      <li>Cosmos DB</li>
-      <li>Application Insights</li>
-      <li>Event-driven design</li>
-    </ul>
-    <p><a href="./azure-monitor-demo/index.html">View Project →</a></p>
-    <p><a href="./blog/azure-function-app.html">Blog Post →</a></p>
-    <p><a href="https://github.com/aguirluis" target="_blank">Source Code →</a></p>
-  </section>
+            <!-- AWS Project -->
+            <section class="project-card">
+              <h3>AWS Serverless Feedback App</h3>
+              <p>
+                A fully serverless cloud application built using AWS Lambda, API Gateway, and DynamoDB.
+                Demonstrates event-driven architecture, monitoring, and CI/CD automation.
+              </p>
+              <ul>
+                <li>AWS Lambda</li>
+                <li>API Gateway</li>
+                <li>DynamoDB</li>
+                <li>CloudWatch Monitoring</li>
+              </ul>
 
-  <!-- Project 3 -->
-  <section class="project-card" id="Virtualization" aria-labelledby="Virtualization-title">
-    <h3 id="Virtualization-title">ProxMox Home Lab</h3>
-    <p>
-      Designed and deployed a full enterprise-style home lab using Proxmox VE for virtualization, pfSense for firewalling, and TrueNAS for storage.
-      Automated VM provisioning with custom scripts, reducing manual setup time by 40%.
-      This environment simulates production-grade infrastructure for testing cybersecurity workflows and identity management solutions.
-    </p>
-    <ul>
-      <li>Proxmox</li>
-      <li>Virtualization</li>
-      <li>Networking</li>
-      <li>Automation</li>
-    </ul>
-    <p><a href="./proxmox.html">Learn More →</a></p>
-    <p><a href="./blog/proxmox-lab.html">Blog Post →</a></p>
-    <p><a href="https://github.com/aguirluis" target="_blank">Source Code →</a></p>
-  </section>
+              <div class="links">
+                <p><a href="aws-feedback-app/index.html"><i class="fas fa-eye"></i> View Project</a></p>
+                <p><a href="./blog/aws-feedback.html"><i class="fas fa-book-open"></i> Blog Post</a></p>
+                <p><a href="https://github.com/aguirluis/feedback-app" target="_blank"><i class="fab fa-github"></i> Source Code</a></p>
+              </div>
+            </section>
 
-  <!-- Project 4 -->
-  <section class="project-card" id="dietpi-samba-addc" aria-labelledby="dietpi-title">
-    <h3 id="dietpi-title">Samba ADDC on Raspberry Pi DietPi</h3>
-    <p>
-      Lightweight Active Directory Domain Controller using Samba 4 on DietPi, ideal for labs and homelabs where you want full domain services without heavy hardware.
-    </p>
-    <ul>
-      <li>Minimal OS footprint with DietPi</li>
-      <li>Samba 4 Active Directory Domain Controller</li>
-      <li>Kerberos and DNS integration</li>
-      <li>Domain provisioning for users and groups</li>
-      <li>Runs efficiently on Raspberry Pi 4+</li>
-    </ul>
-    <p><a href="./dietpi.html">Learn More →</a></p>
-    <p><a href="./blog/samba-addc.html">Blog Post →</a></p>
-    <p><a href="https://github.com/aguirluis" target="_blank">Source Code →</a></p>
-  </section>
+            <!-- Azure Project -->
+            <section class="project-card">
+              <h3>Pland Azure Cloud Function App</h3>
+              <p>
+                A cloud-native application built using Azure Functions, Cosmos DB, and Application Insights.
+                Showcases serverless compute, logging, and scalable data storage.
+              </p>
+              <ul>
+                <li>Azure Functions</li>
+                <li>Cosmos DB</li>
+                <li>Application Insights</li>
+                <li>Event-driven design</li>
+              </ul>
 
-  <!-- Project 5 -->
-  <section class="project-card" id="ADDCLab" aria-labelledby="ADDCLAb-title">
-    <h3 id="ADDCLab-title">Windows Server 2019 — ADDS + RAS/NAT + DHCP</h3>
-    <p>
-      Enterprise-grade identity and network services deployed in a home lab using Windows Server 2019.
-      Includes Active Directory Domain Services, DHCP for IP management, and NAT for secure routing.
-    </p>
-    <ul>
-      <li>Active Directory Domain Services (ADDS)</li>
-      <li>DHCP Server for dynamic IP assignment</li>
-      <li>RAS/NAT for secure routing</li>
-      <li>RBAC model for role-based access</li>
-      <li>Virtualized lab clients (Windows/Linux)</li>
-    </ul>
-    <p><a href="./ActiveDirectoryLab.html">Learn More →</a></p>
-    <p><a href="./blog/windows-adds-lab.html">Blog Post →</a></p>
-    <p><a href="https://github.com/aguirluis" target="_blank">Source Code →</a></p>
-  </section>
+              <div class="links">
+                <p><a href="./azure-monitor-demo/index.html"><i class="fas fa-eye"></i> View Project</a></p>
+                <p><a href="./blog/azure-function-app.html"><i class="fas fa-book-open"></i> Blog Post</a></p>
+                <p><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i> Source Code</a></p>
+              </div>
+            </section>
 
-  <!-- Project 6 -->
-  <section class="project-card" id="website" aria-labelledby="website-title">
-    <h3 id="website-title">TheOldTek Website</h3>
-    <p>
-      This project is the foundation of my personal brand—blending technical rigor with creative expression.
-      Built with GitHub Pages and custom CSS, it showcases my skills in responsive design, theme toggling, and pixel/blueprint aesthetics.
-    </p>
-    <ul>
-      <li>Dark/light theme toggle with dynamic icon</li>
-      <li>Sidebar layout with top/middle/bottom sections</li>
-      <li>Responsive project cards with hover effects</li>
-      <li>Pixel-style avatar and favicon</li>
-      <li>Blueprint-inspired color palette and certification icons</li>
-    </ul>
-    <p><a href="./website.html">Learn More →</a></p>
-    <p><a href="./blog/website-build.html">Blog Post →</a></p>
-    <p><a href="https://github.com/aguirluis/theoldtek" target="_blank">Source Code →</a></p>
-  </section>
+            <!-- Proxmox Project -->
+            <section class="project-card">
+              <h3>ProxMox Home Lab</h3>
+              <p>
+                A full enterprise-style home lab using Proxmox VE, pfSense, and TrueNAS.
+                Automated VM provisioning reduced setup time by 40%.
+              </p>
+              <ul>
+                <li>Proxmox</li>
+                <li>Virtualization</li>
+                <li>Networking</li>
+                <li>Automation</li>
+              </ul>
 
-</div>
+              <div class="links">
+                <p><a href="./proxmox.html"><i class="fas fa-eye"></i> Learn More</a></p>
+                <p><a href="./blog/proxmox-lab.html"><i class="fas fa-book-open"></i> Blog Post</a></p>
+                <p><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i> Source Code</a></p>
+              </div>
+            </section>
 
+            <!-- DietPi Samba ADDC -->
+            <section class="project-card">
+              <h3>Samba ADDC on Raspberry Pi DietPi</h3>
+              <p>
+                Lightweight Active Directory Domain Controller using Samba 4 on DietPi.
+                Ideal for homelabs needing full AD services without heavy hardware.
+              </p>
+              <ul>
+                <li>DietPi OS</li>
+                <li>Samba 4 AD DC</li>
+                <li>Kerberos & DNS</li>
+                <li>Domain provisioning</li>
+              </ul>
 
+              <div class="links">
+                <p><a href="./dietpi.html"><i class="fas fa-eye"></i> Learn More</a></p>
+                <p><a href="./blog/samba-addc.html"><i class="fas fa-book-open"></i> Blog Post</a></p>
+                <p><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i> Source Code</a></p>
+              </div>
+            </section>
+
+            <!-- Windows ADDS Lab -->
+            <section class="project-card">
+              <h3>Windows Server 2019 — ADDS + RAS/NAT + DHCP</h3>
+              <p>
+                Enterprise-grade identity and network services deployed in a home lab.
+                Includes AD DS, DHCP, NAT routing, and RBAC.
+              </p>
+              <ul>
+                <li>Active Directory</li>
+                <li>DHCP Server</li>
+                <li>RAS/NAT Routing</li>
+                <li>RBAC Model</li>
+              </ul>
+
+              <div class="links">
+                <p><a href="./ActiveDirectoryLab.html"><i class="fas fa-eye"></i> Learn More</a></p>
+                <p><a href="./blog/windows-adds-lab.html"><i class="fas fa-book-open"></i> Blog Post</a></p>
+                <p><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i> Source Code</a></p>
+              </div>
+            </section>
+
+            <!-- Website Project -->
+            <section class="project-card">
+              <h3>TheOldTek Website</h3>
+              <p>
+                The foundation of my personal brand — built with GitHub Pages and custom CSS.
+                Features responsive design, theme toggling, and blueprint-inspired aesthetics.
+              </p>
+              <ul>
+                <li>Dark/light theme toggle</li>
+                <li>Sidebar layout</li>
+                <li>Responsive cards</li>
+                <li>Pixel-style avatar</li>
+              </ul>
+
+              <div class="links">
+                <p><a href="./website.html"><i class="fas fa-eye"></i> Learn More</a></p>
+                <p><a href="./blog/website-build.html"><i class="fas fa-book-open"></i> Blog Post</a></p>
+                <p><a href="https://github.com/aguirluis/theoldtek" target="_blank"><i class="fab fa-github"></i> Source Code</a></p>
+              </div>
+            </section>
+
+          </div>
+        </section>
       </main>
 
       <footer>
