@@ -189,6 +189,14 @@ button:focus {
   font-size: var(--font-size-sm);
   color: var(--color-accent);
 }
+.sidebar .nav-links ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar .nav-links li {
+  list-style-type: none;
+}
 
 /* 🧭 Navigation */
 .nav-links {
