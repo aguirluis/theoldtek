@@ -1,52 +1,197 @@
-<h1>Building a Cloud-Native Function App with Azure Functions and Cosmos DB</h1>
-<p class="post-date">Published: 2025</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<p>
-  This project explores how to build a fully cloud-native application using
-  <strong>Azure Functions</strong>, <strong>Cosmos DB</strong>, and
-  <strong>Application Insights</strong>. The goal was to create a lightweight,
-  event-driven workflow that scales automatically and requires zero server
-  management.
-</p>
+  <title>Building a Serverless Feedback Form | TheOldTek</title>
 
-<h2>Architecture Overview</h2>
-<ul>
-  <li>A static frontend triggers an HTTP Azure Function.</li>
-  <li>The Function processes the request and writes data to Cosmos DB.</li>
-  <li>Application Insights logs performance, latency, and errors.</li>
-  <li>Everything runs serverlessly with consumption-based billing.</li>
-</ul>
+  <!-- SEO -->
+  <meta name="description" content="How I built a fully serverless feedback form using AWS Lambda, API Gateway, DynamoDB, and GitHub Pages." />
+  <link rel="canonical" href="https://theoldtek.github.io/blog/aws-feedback.html" />
 
-<h2>Why Azure Functions?</h2>
-<p>
-  Azure Functions provide a clean way to run code on demand without provisioning
-  VMs or containers. The consumption plan automatically scales based on load,
-  making it ideal for unpredictable workloads.
-</p>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Building a Serverless Feedback Form | TheOldTek">
+  <meta property="og:description" content="A walkthrough of building a serverless feedback form using AWS Lambda, API Gateway, DynamoDB, and GitHub Pages.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://theoldtek.github.io/blog/aws-feedback.html">
+  <meta property="og:image" content="https://theoldtek.github.io/img/avatar.png">
 
-<h2>Cosmos DB Integration</h2>
-<p>
-  Cosmos DB’s low-latency document storage pairs well with Functions. I used the
-  SQL API to store JSON objects representing user submissions. The binding model
-  made it easy to write data without manually instantiating the SDK.
-</p>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Building a Serverless Feedback Form">
+  <meta name="twitter:description" content="A walkthrough of building a serverless feedback form using AWS Lambda and GitHub Pages.">
 
-<h2>Monitoring with Application Insights</h2>
-<p>
-  Application Insights gave me real-time visibility into:
-</p>
-<ul>
-  <li>Function execution times</li>
-  <li>Cold starts</li>
-  <li>Request traces</li>
-  <li>Failures and exceptions</li>
-</ul>
+  <!-- Styles -->
+  <link rel="icon" type="image/png" href="../img/favicon.png" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-<h2>What I Learned</h2>
-<ul>
-  <li>Azure Functions are extremely flexible for small apps.</li>
-  <li>Cosmos DB bindings simplify data access.</li>
-  <li>Monitoring is essential for understanding serverless behavior.</li>
-</ul>
+  <!-- Optional: Code Highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+</head>
 
-<p><a href="../blog.html">← Back to Blog</a></p>
+<body id="top">
+  <div class="layout">
+
+    <!-- Sidebar -->
+  <aside class="sidebar">
+  <div class="sidebar-upper">
+    <div class="sidebar-top">
+      <div class="profile-img">
+        <img src="./img/avatar.png" alt="Profile photo of Luis E. Aguirre" />
+      </div>
+      <h1 class="site-title">TheOldTek</h1>
+      <p class="tagline">Cloud System Admin • Cybersecurity • Home Lab Architect</p>
+    </div>
+
+    <nav class="sidebar-middle">
+      <ul class="nav-links">
+        <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="./about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="./blog.html"><i class="fas fa-pen"></i> Blog</a></li>
+        <li><a href="mailto:aguirluis@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="sidebar-bottom">
+    <ul class="social-links">
+      <li><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://linkedin.com/in/luis-aguirre01" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="mailto:aguirluis@gmail.com"><i class="fab fa-google"></i></a></li>
+      <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+    </ul>
+  </div>
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="main-area">
+      <article class="content blog-post">
+
+        <header>
+          <h1>Building a Serverless Feedback Form with AWS and GitHub Pages</h1>
+          <p class="post-date">Published: 2025</p>
+        </header>
+
+        <section>
+          <p>
+            While studying for the AWS Associate certification, I wanted a hands-on project that used real AWS services without requiring servers or complex infrastructure.  
+            The result was a fully serverless feedback-collection app powered by:
+          </p>
+
+          <ul class="checklist">
+            <li><strong>AWS Lambda</strong></li>
+            <li><strong>API Gateway</strong></li>
+            <li><strong>DynamoDB</strong></li>
+            <li><strong>GitHub Pages</strong> for the frontend</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Step 1: Build the Frontend (Free)</h2>
+          <ul>
+            <li>Simple HTML/JS form</li>
+            <li>Hosted on GitHub Pages</li>
+            <li>Sends POST requests to your cloud API</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Step 2: Add a Database</h2>
+          <ul>
+            <li>Store form submissions</li>
+            <li>Use DynamoDB, Firestore, or Cosmos DB free tier</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Step 3: Add an Event Trigger</h2>
+          <p>Choose one:</p>
+          <ul>
+            <li>Send an email (SES, SendGrid)</li>
+            <li>Write logs to CloudWatch</li>
+            <li>Trigger another function</li>
+            <li>Generate a summary report</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Step 4: Add Monitoring</h2>
+          <ul>
+            <li>Track number of submissions</li>
+            <li>Track errors</li>
+            <li>Create a dashboard</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Step 5: Add CI/CD</h2>
+          <ul>
+            <li>GitHub Actions deploys your function automatically</li>
+            <li>Another workflow deploys your frontend</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Architecture Overview</h2>
+          <ul>
+            <li>User fills out a feedback form on a static HTML page.</li>
+            <li>The browser sends a <code>POST</code> request to an API Gateway endpoint.</li>
+            <li>API Gateway invokes a Lambda function.</li>
+            <li>Lambda writes the feedback into a DynamoDB table (<code>FeedbackTable</code>).</li>
+            <li>The Lambda returns a JSON response displayed by the frontend.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Backend: Lambda + DynamoDB</h2>
+          <p>
+            The Lambda function (Node.js 22.x) uses AWS SDK v3 to parse the request, generate a unique
+            <code>feedbackId</code>, and store the data in DynamoDB.
+          </p>
+        </section>
+
+        <section>
+          <h2>API Gateway: Exposing the Lambda</h2>
+          <p>
+            I created a REST API with a <code>POST /feedback</code> method using Lambda proxy integration.
+            CORS was enabled, and I tested the method until it consistently returned <code>200 OK</code>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Frontend: Static HTML on GitHub Pages</h2>
+          <p>
+            The page you're reading is a simple HTML form that sends JSON to the API Gateway endpoint.
+            Because the backend handles CORS and returns clean JSON, the frontend stays lightweight.
+          </p>
+        </section>
+
+        <section>
+          <h2>Why This Approach Works Well</h2>
+          <ul>
+            <li><strong>No servers to manage:</strong> Lambda and DynamoDB are fully managed.</li>
+            <li><strong>Scales automatically:</strong> Handles traffic spikes effortlessly.</li>
+            <li><strong>Cost-effective:</strong> Pay only for what you use.</li>
+            <li><strong>Simple frontend:</strong> A single static HTML file powers the experience.</li>
+          </ul>
+        </section>
+
+        <footer class="post-footer">
+          <p><a href="../blog.html">← Back to Blog</a></p>
+        </footer>
+
+      </article>
+
+      <footer class="site-footer">
+        <p>© 2025 TheOldTek | Built with GitHub Pages</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../js/theme.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+</html>
