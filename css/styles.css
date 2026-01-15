@@ -189,15 +189,48 @@ button:focus {
   font-size: var(--font-size-sm);
   color: var(--color-accent);
 }
-.sidebar .nav-links ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.sidebar .nav-links li {
-  list-style-type: none;
-}
 
 /* 🧭 Navigation */
 .nav-links {
-  list-style
+  /* this is the nav container, not the list itself */
+}
+
+.nav-links ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li + li {
+  margin-top: var(--space-xs);
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-1);
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.nav-links a i {
+  font-size: 1rem;
+  color: var(--color-accent);
+}
+
+.nav-links a:hover {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent);
+  transform: translateX(3px);
+}
+
+.nav-links a.active {
+  background-color: var(--color-accent-soft);
+  font-weight: var(--font-weight-medium);
+}
+
