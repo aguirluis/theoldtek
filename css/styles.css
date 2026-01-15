@@ -323,9 +323,10 @@ footer {
   .project-list {
     gap: 1rem;
   }
-}
-
-aws-feedback-app body {
+  /* Close MEDIA Query HERE */
+  /* AWS Feedback App Scope Styles */
+  
+.aws-feedback-app {
   font-family: Arial, sans-serif;
   max-width: 600px;
   margin: 40px auto;
@@ -333,18 +334,18 @@ aws-feedback-app body {
   line-height: 1.6;
 }
 
-aws-feedback-app h1 {
+.aws-feedback-app h1 {
   text-align: center;
 }
 
-aws-feedback-app label {
+.aws-feedback-app label {
   display: block;
   margin-top: 12px;
   font-weight: bold;
 }
 
-aws-feedback-app input,
-aws-feedback-app textarea {
+.aws-feedback-app input,
+.aws-feedback-app textarea {
   width: 100%;
   padding: 8px;
   margin-top: 4px;
@@ -352,7 +353,7 @@ aws-feedback-app textarea {
   border-radius: 4px;
 }
 
-aws-feedback-app button {
+.aws-feedback-app button {
   margin-top: 16px;
   padding: 10px 16px;
   cursor: pointer;
@@ -362,12 +363,13 @@ aws-feedback-app button {
   border-radius: 4px;
 }
 
-aws-feedback-app button:hover {
+.aws-feedback-app button:hover {
   background: #005f99;
 }
 
-aws-feedback-app .message {
+.aws-feedback-app .message {
   margin-top: 16px;
   font-weight: bold;
 }
+ 
 
