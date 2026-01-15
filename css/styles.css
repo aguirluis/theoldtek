@@ -233,4 +233,17 @@ button:focus {
   background-color: var(--color-accent-soft);
   font-weight: var(--font-weight-medium);
 }
+/* Remove bullets from sidebar navigation on all pages */
+.sidebar .nav-links {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.sidebar .nav-links li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 
