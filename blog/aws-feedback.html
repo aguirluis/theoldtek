@@ -55,14 +55,54 @@
           <p class="post-date">Published: 2025</p>
 
 <p>
-  I’m currently studying for the AWS Associate certification, and to get more hands-on experience with AWS, I decided to build a simple feedback-collection app. My goal was to avoid running servers, managing databases, or dealing with scaling concerns, so I chose a fully serverless approach:
-  <strong>AWS Lambda</strong>, <strong>API Gateway</strong>, and <strong>DynamoDB</strong>, with a static frontend hosted on <strong>GitHub Pages</strong>.
+  I’m currently studying for the AWS Associate certification,
+  and to get more hands-on experience with AWS, I decided to build a simple feedback-collection app.
+  My goal was to avoid running servers, managing databases, or dealing with scaling concerns,
+  so I chose a fully serverless approach:
+  <strong>AWS Lambda</strong>, 
+  <strong>API Gateway</strong>,
+  and <strong>DynamoDB</strong>, with a static frontend hosted on <strong>GitHub Pages</strong>.
 </p>
 
 
+          <h1>Step 1: Build the Frontend (Free)</h1> 
+          <ul> <li>Simple HTML/JS form</li>
+          <li>Hosted on GitHub Pages</li> 
+          <li>Sends POST requests to your cloud API</li> 
+          </ul>
+
+           <h2>Step 2: Add a Database</h2> 
+          <ul> <li>Store form submissions</li> 
+          <li>Use DynamoDB/Firestore/Cosmos DB free tier</li>
+          </ul>
+
+          <h2>Step 3: Add an Event Trigger</h2>
+          <p>Choose one:</p> 
+          <ul> <li>Send an email (SES, SendGrid free tier)</li>
+            <li>Write logs to CloudWatch</li>
+            <li>Trigger another function</li>
+            <li>Generate a summary report</li> </ul>
+          
+          <h2>Step 4: Add Monitoring</h2>
+          <ul> <li>Track number of submissions</li>
+          <li>Track errors</li>
+          <li>Create a dashboard</li> 
+          </ul>
+          <h2>Step 5: Add CI/CD</h2> 
+          <ul> 
+          <li>GitHub Actions deploys your function automatically</li> 
+          <li>Another workflow deploys your frontend</li> 
+          </ul>
+          
           <h2>Architecture at a glance</h2>
           <p>The flow looks like this:</p>
 
+           <h2>Create the Serverless Backend</h2>
+          <ul> <li>Write a function in Python or Node.js</li> 
+          <li>Deploy to AWS Lambda (or Azure/GCP)</li> 
+            <li>Connect it to API Gateway</li> </ul>
+          
+          
           <ul>
             <li>The user fills out a feedback form on a static HTML page.</li>
             <li>The browser sends a <code>POST</code> request to an AWS API Gateway endpoint.</li>
