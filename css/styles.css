@@ -84,9 +84,7 @@ body {
   color: var(--color-text-1);
   line-height: 1.6;
   font-size: clamp(0.95rem, 1vw + 0.5rem, 1.05rem);
-  transition:
-    background-color var(--transition-med),
-    color var(--transition-med);
+  transition: background-color var(--transition-med), color var(--transition-med);
 }
 
 img {
@@ -142,7 +140,7 @@ button:focus {
               radial-gradient(circle at bottom right, var(--color-accent-soft), transparent 55%);
 }
 
-/* 🧭 Sidebar (Desktop) */
+/* 🧭 Sidebar */
 .sidebar {
   width: var(--sidebar-width);
   background: linear-gradient(to bottom, var(--color-bg-2), var(--color-bg-1));
@@ -154,17 +152,14 @@ button:focus {
   box-shadow: var(--shadow-soft);
   position: relative;
   z-index: 20;
-  transition:
-    background-color var(--transition-med),
-    border-color var(--transition-med),
-    box-shadow var(--transition-med),
-    transform var(--transition-med);
 }
 
-.sidebar-upper {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
+/* Remove bullets everywhere inside sidebar */
+.sidebar ul,
+.sidebar li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .sidebar-top {
@@ -191,15 +186,6 @@ button:focus {
 }
 
 /* 🧭 Navigation */
-.nav-links {
-  /* this is the nav container, not the list itself */
-}
-
-.nav-links ul {
-  margin: 0;
-  padding: 0;
-}
-
 .nav-links li + li {
   margin-top: var(--space-xs);
 }
@@ -212,10 +198,7 @@ button:focus {
   font-size: var(--font-size-sm);
   color: var(--color-text-1);
   border-radius: var(--radius-md);
-  transition:
-    background-color var(--transition-fast),
-    color var(--transition-fast),
-    transform var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
 }
 
 .nav-links a i {
@@ -233,17 +216,170 @@ button:focus {
   background-color: var(--color-accent-soft);
   font-weight: var(--font-weight-medium);
 }
-/* Remove bullets from sidebar navigation on all pages */
-.sidebar .nav-links {
+
+/* 🔗 Social Links */
+.social-links {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links a,
+.social-links button {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-round);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-med), border-color var(--transition-med), transform var(--transition-fast);
+}
+
+.social-links a:hover,
+.social-links button:hover {
+  background-color: var(--color-accent-soft);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+/* 🌗 Theme Toggle */
+#theme-toggle {
+  font-size: 1.1rem;
+}
+
+/* 🧱 Main Area — Centered Layout */
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xl) var(--space-xl);
+  max-width: 1100px; /* Center the entire main area */
+  margin: 0 auto;
+}
+
+.content {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+/* 📝 Blog Layout */
+.blog-post h1 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-xs);
+}
+
+.post-date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-2);
+}
+
+.blog-post h2 {
+  font-size: var(--font-size-2xl);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.blog-post p {
+  margin-bottom: var(--space-md);
+}
+
+.blog-post ul {
+  margin: var(--space-sm) 0 var(--space-md);
+  padding-left: var(--space-xl);
+}
+
+.blog-post code {
+  background-color: var(--color-bg-2);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* Checklist */
+.checklist {
   list-style: none;
   padding-left: 0;
-  margin: 0;
 }
 
-.sidebar .nav-links li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.checklist li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: var(--space-xs);
 }
 
+.checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: var(--color-accent);
+}
 
+/* 🗂️ Project Cards */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.project-card {
+  background-color: var(--color-bg-elevated);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-fast), box-shadow var(--transition-med);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+}
+
+.project-card h3 {
+  color: var(--color-accent);
+}
+
+/* 🧾 Footer */
+.site-footer,
+.post-footer {
+  margin-top: var(--space-xl);
+  padding: var(--space-md);
+  background-color: var(--color-bg-2);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-md);
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .main-area {
+    padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 600px) {
+  .main-area {
+    padding: var(--space-md);
+  }
+
+  .blog-post h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .blog-post h2 {
+    font-size: var(--font-size-xl);
+  }
+}
