@@ -66,26 +66,26 @@
         <p>
           The form below sends user feedback directly to an AWS API Gateway endpoint, which triggers a Lambda function and stores the data in DynamoDB.
         </p>
+<h3>Submit Feedback</h3>
 
-        <h3>Submit Feedback</h3>
+<div class="aws-feedback-app">
+  <form id="feedbackForm" class="project-form">
+    <label for="name">Name</label>
+    <input type="text" id="name" required />
 
-        <!-- Feedback Form -->
-        <form id="feedbackForm" class="project-form">
-          <label for="name">Name</label>
-          <input type="text" id="name" required />
+    <label for="email">Email</label>
+    <input type="email" id="email" required />
 
-          <label for="email">Email</label>
-          <input type="email" id="email" required />
+    <label for="message">Feedback Message</label>
+    <textarea id="message" rows="4" required></textarea>
 
-          <label for="message">Feedback Message</label>
-          <textarea id="message" rows="4" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
 
-          <button type="submit">Submit</button>
-        </form>
+  <p id="status" class="message"></p>
+</div>
 
-        <p id="status" class="message"></p>
-
-        <div class="links" style="margin-top: 2rem;">
+       
           <p><a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Home</a></p>
           <p><a href="../blog/aws-feedback.html"><i class="fas fa-book-open"></i> Read Blog Post</a></p>
           <p><a href="https://github.com/aguirluis/feedback-app" target="_blank"><i class="fab fa-github"></i> Source Code</a></p>
