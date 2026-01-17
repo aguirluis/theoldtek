@@ -497,4 +497,22 @@ footer,
   .project-list {
     grid-template-columns: 1fr;
   }
+  .message {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  display: none; /* hidden until JS shows it */
+}
+
+.message.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.message.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
 }
