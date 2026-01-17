@@ -87,6 +87,41 @@ body {
   transition: background-color var(--transition-med), color var(--transition-med);
 }
 
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.skill-badge {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s ease;
+}
+
+.skill-badge i {
+  color: var(--accent-color);
+}
+
+.skill-badge:hover {
+  background: var(--accent-color);
+  color: #fff;
+  border-color: var(--accent-color);
+}
+
+.skill-badge:hover i {
+  color: #fff;
+}
+
+
+
 img {
   max-width: 100%;
   display: block;
