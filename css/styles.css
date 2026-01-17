@@ -514,4 +514,15 @@ footer,
   .project-list {
     grid-template-columns: 1fr;
   }
+  #status {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#status.show {
+  opacity: 1;
+}
+
 }
