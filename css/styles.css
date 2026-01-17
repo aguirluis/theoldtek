@@ -1,19 +1,27 @@
-🎨 Design Tokens */
+/* 🎨 Design Tokens */
 :root {
   /* Colors */
   --color-bg-1: #f4f4f4;
   --color-bg-2: #e0e0e0;
   --color-bg-elevated: #ffffff;
+
   --color-text-1: #222222;
   --color-text-2: #555555;
+
   --color-accent: #007acc;
   --color-accent-soft: rgba(0, 122, 204, 0.12);
+
   --color-border: #d0d0d0;
+  --color-border-strong: #b5b5b5;
+
+  --color-card-bg: #ffffff;
+
   --color-shadow-soft: rgba(0, 0, 0, 0.08);
   --color-shadow-strong: rgba(0, 0, 0, 0.18);
 
   /* Typography */
   --font-family-base: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.85rem;
   --font-size-md: 1rem;
@@ -48,6 +56,8 @@
   /* Layout */
   --sidebar-width: 260px;
   --content-max-width: 900px;
+
+  /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-med: 0.3s ease;
 }
@@ -57,11 +67,18 @@
   --color-bg-1: #121212;
   --color-bg-2: #1b1b1b;
   --color-bg-elevated: #1f1f1f;
+
   --color-text-1: #e5e5e5;
   --color-text-2: #b0b0b0;
+
   --color-accent: #00bfff;
   --color-accent-soft: rgba(0, 191, 255, 0.18);
+
   --color-border: #333333;
+  --color-border-strong: #444444;
+
+  --color-card-bg: #1f1f1f;
+
   --color-shadow-soft: rgba(0, 0, 0, 0.6);
   --color-shadow-strong: rgba(0, 0, 0, 0.8);
 }
@@ -84,43 +101,10 @@ body {
   color: var(--color-text-1);
   line-height: 1.6;
   font-size: clamp(0.95rem, 1vw + 0.5rem, 1.05rem);
-  transition: background-color var(--transition-med), color var(--transition-med);
+  transition:
+    background-color var(--transition-med),
+    color var(--transition-med);
 }
-
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 15px 0;
-}
-
-.skill-badge {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: 0.2s ease;
-}
-
-.skill-badge i {
-  color: var(--accent-color);
-}
-
-.skill-badge:hover {
-  background: var(--accent-color);
-  color: #fff;
-  border-color: var(--accent-color);
-}
-
-.skill-badge:hover i {
-  color: #fff;
-}
-
-
 
 img {
   max-width: 100%;
@@ -130,7 +114,9 @@ img {
 a {
   color: var(--color-accent);
   text-decoration: none;
-  transition: color var(--transition-med), text-decoration-color var(--transition-med);
+  transition:
+    color var(--transition-med),
+    text-decoration-color var(--transition-med);
 }
 
 a:hover {
@@ -171,8 +157,9 @@ button:focus {
 .layout {
   display: flex;
   min-height: 100vh;
-  background: radial-gradient(circle at top left, var(--color-accent-soft), transparent 55%),
-              radial-gradient(circle at bottom right, var(--color-accent-soft), transparent 55%);
+  background:
+    radial-gradient(circle at top left, var(--color-accent-soft), transparent 55%),
+    radial-gradient(circle at bottom right, var(--color-accent-soft), transparent 55%);
 }
 
 /* 🧭 Sidebar */
@@ -187,14 +174,24 @@ button:focus {
   box-shadow: var(--shadow-soft);
   position: relative;
   z-index: 20;
+  transition:
+    background-color var(--transition-med),
+    border-color var(--transition-med),
+    box-shadow var(--transition-med);
 }
 
-/* Remove bullets everywhere inside sidebar */
+/* Remove bullets inside sidebar */
 .sidebar ul,
 .sidebar li {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.sidebar-upper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
 }
 
 .sidebar-top {
@@ -233,7 +230,10 @@ button:focus {
   font-size: var(--font-size-sm);
   color: var(--color-text-1);
   border-radius: var(--radius-md);
-  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .nav-links a i {
@@ -253,6 +253,10 @@ button:focus {
 }
 
 /* 🔗 Social Links */
+.sidebar-bottom {
+  margin-top: var(--space-xl);
+}
+
 .social-links {
   display: flex;
   gap: var(--space-md);
@@ -271,7 +275,10 @@ button:focus {
   background: transparent;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background-color var(--transition-med), border-color var(--transition-med), transform var(--transition-fast);
+  transition:
+    background-color var(--transition-med),
+    border-color var(--transition-med),
+    transform var(--transition-fast);
 }
 
 .social-links a:hover,
@@ -284,6 +291,7 @@ button:focus {
 /* 🌗 Theme Toggle */
 #theme-toggle {
   font-size: 1.1rem;
+  color: var(--color-text-1);
 }
 
 /* 🧱 Main Area — Centered Layout */
@@ -292,7 +300,7 @@ button:focus {
   display: flex;
   flex-direction: column;
   padding: var(--space-xl) var(--space-xl);
-  max-width: 1100px; /* Center the entire main area */
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -301,7 +309,96 @@ button:focus {
   margin: 0 auto;
 }
 
-/* 📝 Blog Layout */
+/* Section headings */
+.content h1,
+.content h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+.content h2 {
+  font-size: var(--font-size-2xl);
+}
+
+/* 🗂️ Project Cards */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.project-card {
+  background-color: var(--color-card-bg);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-border);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-med),
+    border-color var(--transition-med);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+  border-color: var(--color-border-strong);
+}
+
+.project-card h3 {
+  color: var(--color-accent);
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+}
+
+.project-card p {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-2);
+}
+
+.project-card ul {
+  margin: 0 0 var(--space-sm);
+  padding-left: var(--space-xl);
+  color: var(--color-text-1);
+}
+
+.project-card .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.project-card .links p {
+  margin: 0;
+}
+
+.project-card .links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.project-card .links a i {
+  font-size: 0.9rem;
+}
+
+.project-card .links a:hover {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+/* 📝 Blog Layout (for blog pages) */
 .blog-post h1 {
   font-size: var(--font-size-3xl);
   margin-bottom: var(--space-xs);
@@ -353,31 +450,8 @@ button:focus {
   color: var(--color-accent);
 }
 
-/* 🗂️ Project Cards */
-.project-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-lg);
-}
-
-.project-card {
-  background-color: var(--color-bg-elevated);
-  padding: var(--space-md);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--transition-fast), box-shadow var(--transition-med);
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-strong);
-}
-
-.project-card h3 {
-  color: var(--color-accent);
-}
-
 /* 🧾 Footer */
+footer,
 .site-footer,
 .post-footer {
   margin-top: var(--space-xl);
@@ -386,6 +460,7 @@ button:focus {
   text-align: center;
   font-size: var(--font-size-xs);
   border-radius: var(--radius-md);
+  color: var(--color-text-2);
 }
 
 /* 📱 Responsive */
@@ -398,6 +473,7 @@ button:focus {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
   }
 
   .main-area {
@@ -416,5 +492,9 @@ button:focus {
 
   .blog-post h2 {
     font-size: var(--font-size-xl);
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
   }
 }
