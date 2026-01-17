@@ -14,170 +14,146 @@
   <div class="layout">
 
     <!-- Sidebar -->
-  <aside class="sidebar">
-  <div class="sidebar-upper">
-    <div class="sidebar-top">
-      <div class="profile-img">
-        <img src="./img/avatar.png" alt="Profile photo of Luis E. Aguirre" />
+    <aside class="sidebar">
+      <div class="sidebar-upper">
+        <div class="sidebar-top">
+          <div class="profile-img">
+            <img src="./img/avatar.png" alt="Profile photo of Luis E. Aguirre" />
+          </div>
+          <h1 class="site-title">TheOldTek</h1>
+          <p class="tagline">Cloud System Admin • Cybersecurity • Home Lab Architect</p>
+        </div>
+
+        <nav class="sidebar-middle">
+          <ul class="nav-links">
+            <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="./about.html" class="active"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="./blog.html"><i class="fas fa-pen"></i> Blog</a></li>
+            <li><a href="mailto:aguirluis@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
+          </ul>
+        </nav>
       </div>
-      <h1 class="site-title">TheOldTek</h1>
-      <p class="tagline">Cloud System Admin • Cybersecurity • Home Lab Architect</p>
-    </div>
 
-    <nav class="sidebar-middle">
-      <ul class="nav-links">
-        <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="./about.html"><i class="fas fa-user"></i> About</a></li>
-        <li><a href="./blog.html"><i class="fas fa-pen"></i> Blog</a></li>
-        <li><a href="mailto:aguirluis@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+      <div class="sidebar-bottom">
+        <ul class="social-links">
+          <li><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://linkedin.com/in/luis-aguirre01" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="mailto:aguirluis@gmail.com"><i class="fab fa-google"></i></a></li>
+          <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+      </div>
+    </aside>
 
-  <div class="sidebar-bottom">
-    <ul class="social-links">
-      <li><a href="https://github.com/aguirluis" target="_blank"><i class="fab fa-github"></i></a></li>
-      <li><a href="https://linkedin.com/in/luis-aguirre01" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-      <li><a href="mailto:aguirluis@gmail.com"><i class="fab fa-google"></i></a></li>
-      <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
-    </ul>
-  </div>
-</aside>
-
-
-   <!-- Main Content -->
+    <!-- Main Content -->
     <div class="main-area">
       <main class="content">
-       <section id="about">
 
-  <h1>About Me</h1>
+        <!-- Resume Button -->
+        <div class="resume-button">
+          <a href="./docs/Luis_Aguirre_Resume.pdf" download>
+            <i class="fas fa-file-download"></i> Download My Resume
+          </a>
+        </div>
 
-  <p>
-    I’m <strong>Luis E. Aguirre</strong> — better known as <strong>TheOldTek</strong> — an Associate Cloud & Systems Administrator
-    with a passion for building reliable, scalable, and secure infrastructure. I work across both on‑prem and cloud
-    environments, blending years of hands‑on systems administration with a growing focus on Azure and AWS.
-  </p>
+        <section id="about">
 
-  <p>
-    My tech journey started after the military, followed by earning my associate degree in 2007 and my bachelor’s in 2009.
-    Over the past decade, I’ve supported identity systems, managed servers, troubleshot complex infrastructure issues, and
-    built out home labs that mirror real enterprise environments. The name “TheOldTek” fits — I’ve been around long enough
-    to remember how things used to be, but I’m still learning, still experimenting, and still having fun keeping up with
-    the new wave of cloud‑driven tech.
-  </p>
+          <h1>About Me</h1>
 
-  <p>
-    What began with tinkering on old hardware has grown into designing full lab architectures using
-    <strong>Proxmox</strong>, <strong>pfSense</strong>, <strong>TrueNAS</strong>, <strong>Azure</strong>, <strong>AWS</strong>, and identity platforms like
-    <strong>Samba AD DS</strong> and <strong>Windows Server</strong>. I enjoy taking complex systems — whether virtualized, cloud‑based,
-    or hybrid — and turning them into clean, dependable solutions.
-  </p>
+          <p>
+            I’m <strong>Luis E. Aguirre</strong> — better known as <strong>TheOldTek</strong> — an Associate Cloud & Systems Administrator
+            with a passion for building reliable, scalable, and secure infrastructure. I work across both on‑prem and cloud
+            environments, blending several years of hands‑on systems administration with a growing focus on Azure and AWS.
+          </p>
 
-  <h3>Skills & Technologies</h3>
+          <p>
+            My tech journey began after the military, followed by earning my associate degree in 2007 and bachelor’s in 2009.
+            Since then, I’ve supported identity systems, managed servers, troubleshot complex infrastructure issues, and built
+            home labs that mirror real enterprise environments. The name “TheOldTek” fits — I’ve been around long enough to
+            remember how things used to be, but I’m still learning, still experimenting, and still having fun keeping up with
+            the new wave of cloud‑driven tech.
+          </p>
 
-  <p class="skills-intro">
-    Here are the core technologies and platforms I work with across cloud, systems, and home lab environments:
-  </p>
+          <p>
+            What started with tinkering on old hardware has grown into designing full lab architectures using
+            <strong>Proxmox</strong>, <strong>pfSense</strong>, <strong>TrueNAS</strong>, <strong>Azure</strong>, <strong>AWS</strong>, and identity platforms like
+            <strong>Samba AD DS</strong> and <strong>Windows Server</strong>. I enjoy taking complex systems — whether virtualized, cloud‑based,
+            or hybrid — and turning them into clean, dependable solutions.
+          </p>
 
-  <div class="skills-grid">
-    <span class="skill-badge"><i class="fas fa-cloud"></i> Azure</span>
-    <span class="skill-badge"><i class="fab fa-aws"></i> AWS</span>
-    <span class="skill-badge"><i class="fas fa-server"></i> Windows Server</span>
-    <span class="skill-badge"><i class="fas fa-network-wired"></i> Active Directory / IAM</span>
-    <span class="skill-badge"><i class="fas fa-database"></i> SQL & NoSQL</span>
-    <span class="skill-badge"><i class="fas fa-code"></i> PowerShell</span>
-    <span class="skill-badge"><i class="fas fa-terminal"></i> Bash</span>
-    <span class="skill-badge"><i class="fas fa-layer-group"></i> Virtualization (Proxmox / VMware)</span>
-    <span class="skill-badge"><i class="fas fa-shield-alt"></i> Security Fundamentals</span>
-    <span class="skill-badge"><i class="fas fa-network-wired"></i> Networking</span>
-    <span class="skill-badge"><i class="fas fa-cubes"></i> Containers (Docker)</span>
-    <span class="skill-badge"><i class="fas fa-tools"></i> Automation</span>
-  </div>
+          <!-- Skills -->
+          <h3>Skills & Technologies</h3>
+          <p class="skills-intro">Core technologies I work with across cloud, systems, and home lab environments:</p>
 
-</section>
-<h3>Certifications</h3>
+          <div class="skills-grid">
+            <span class="skill-badge"><i class="fas fa-cloud"></i> Azure</span>
+            <span class="skill-badge"><i class="fab fa-aws"></i> AWS</span>
+            <span class="skill-badge"><i class="fas fa-server"></i> Windows Server</span>
+            <span class="skill-badge"><i class="fas fa-network-wired"></i> Active Directory / IAM</span>
+            <span class="skill-badge"><i class="fas fa-database"></i> SQL & NoSQL</span>
+            <span class="skill-badge"><i class="fas fa-code"></i> PowerShell</span>
+            <span class="skill-badge"><i class="fas fa-terminal"></i> Bash</span>
+            <span class="skill-badge"><i class="fas fa-layer-group"></i> Virtualization (Proxmox / VMware)</span>
+            <span class="skill-badge"><i class="fas fa-shield-alt"></i> Security Fundamentals</span>
+            <span class="skill-badge"><i class="fas fa-network-wired"></i> Networking</span>
+            <span class="skill-badge"><i class="fas fa-cubes"></i> Containers (Docker)</span>
+            <span class="skill-badge"><i class="fas fa-tools"></i> Automation</span>
+          </div>
 
-<div class="cert-grid">
+          <!-- Certifications -->
+          <h3>Certifications</h3>
+          <div class="cert-grid">
+            <span class="cert-badge"><i class="fas fa-shield-alt"></i> CompTIA Security+</span>
+            <span class="cert-badge"><i class="fas fa-desktop"></i> CompTIA A+</span>
+            <span class="cert-badge"><i class="fas fa-cloud"></i> Microsoft Azure Fundamentals (AZ‑900)</span>
+            <span class="cert-badge"><i class="fab fa-aws"></i> AWS Cloud Practitioner</span>
+          </div>
 
-  <span class="cert-badge">
-    <i class="fas fa-shield-alt"></i> CompTIA Security+
-  </span>
+          <!-- Currently Learning -->
+          <h3>Currently Learning</h3>
+          <ul class="learning-list">
+            <li><i class="fas fa-book"></i> Microsoft Azure Administrator (AZ‑104)</li>
+            <li><i class="fas fa-book"></i> AWS Solutions Architect Associate</li>
+          </ul>
 
-  <span class="cert-badge">
-    <i class="fas fa-desktop"></i> CompTIA A+
-  </span>
+          <!-- What I Do -->
+          <h3>What I Do</h3>
+          <ul>
+            <li>Cloud engineering (AWS + Azure)</li>
+            <li>Identity & access management</li>
+            <li>Homelab architecture & virtualization</li>
+            <li>Automation & scripting</li>
+            <li>Cybersecurity fundamentals</li>
+          </ul>
 
-  <span class="cert-badge">
-    <i class="fas fa-cloud"></i> Microsoft Azure Fundamentals (AZ‑900)
-  </span>
+          <!-- Timeline -->
+          <h3>Career Timeline</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="year">2007–2009</span>
+              <p>Completed Associate and Bachelor’s degrees in IT.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">2010–2016</span>
+              <p>Early IT roles supporting hardware, networking, and system troubleshooting.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">2016–2021</span>
+              <p>Systems Administration: Windows Server, AD DS, virtualization, identity management.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">2021–Present</span>
+              <p>Cloud‑focused Systems Administration: Azure, AWS, hybrid infrastructure, automation.</p>
+            </div>
+          </div>
 
-  <span class="cert-badge">
-    <i class="fab fa-aws"></i> AWS Cloud Practitioner
-  </span>
+          <!-- Outside Tech -->
+          <h3>Outside of Tech</h3>
+          <p>
+            When I'm not deep in a terminal or cloud console, I enjoy retro tech, gaming, and exploring new tools that push
+            my skills further.
+          </p>
 
-</div>
-
-<h3>Currently Learning</h3>
-
-<ul class="learning-list">
-  <li><i class="fas fa-book"></i> Microsoft Azure Administrator (AZ‑104)</li>
-  <li><i class="fas fa-book"></i> AWS Solutions Architect Associate</li>
-</ul>
-
-    <h3>Career Timeline</h3>
-
-<div class="timeline">
-
-  <div class="timeline-item">
-    <span class="year">2007–2009</span>
-    <p>Completed Associate and Bachelor’s degrees in IT.</p>
-  </div>
-
-  <div class="timeline-item">
-    <span class="year">2010–2016</span>
-    <p>Early IT roles supporting hardware, networking, and system troubleshooting.</p>
-  </div>
-
-  <div class="timeline-item">
-    <span class="year">2016–2021</span>
-    <p>Systems Administration: Windows Server, AD DS, virtualization, identity management.</p>
-  </div>
-
-  <div class="timeline-item">
-    <span class="year">2021–Present</span>
-    <p>Cloud‑focused Systems Administration: Azure, AWS, hybrid infrastructure, automation.</p>
-  </div>
-
-</div>
-
-
-        <h3>What I Do</h3>
-        <ul>
-          <li>Cloud engineering (AWS + Azure)</li>
-          <li>Identity & access management</li>
-          <li>Homelab architecture & virtualization</li>
-          <li>Automation & scripting</li>
-          <li>Cybersecurity fundamentals</li>
-        </ul>
-
-        <h3>My Philosophy</h3>
-        <p>
-          I believe in learning by building. Every project on this site represents something I deployed, broke, fixed,
-          automated, or improved. My goal is to share what I learn and help others build their own labs and cloud projects.
-        </p>
-
-        <h3>Certifications</h3>
-        <ul>
-          <li>CompTIA  Security+ / A+</li>
-          <li>Microsoft Azure Fundamentals</li>
-          <li>AWS Cloud Practitioner</li>
-        </ul>
-
-        <h3>Outside of Tech</h3>
-        <p>
-          When I'm not deep in a terminal or cloud console, I enjoy retro tech, gaming, and exploring new tools that push
-          my skills further.
-        </p>
+        </section>
 
       </main>
 
