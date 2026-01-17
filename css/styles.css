@@ -180,7 +180,6 @@ button:focus {
     box-shadow var(--transition-med);
 }
 
-/* Remove bullets inside sidebar */
 .sidebar ul,
 .sidebar li {
   list-style: none;
@@ -294,7 +293,7 @@ button:focus {
   color: var(--color-text-1);
 }
 
-/* 🧱 Main Area — Centered Layout */
+/* 🧱 Main Area */
 .main-area {
   flex: 1;
   display: flex;
@@ -309,7 +308,6 @@ button:focus {
   margin: 0 auto;
 }
 
-/* Section headings */
 .content h1,
 .content h2 {
   margin-top: 0;
@@ -398,7 +396,7 @@ button:focus {
   color: var(--color-accent);
 }
 
-/* 📝 Blog Layout (for blog pages) */
+/* 📝 Blog Layout */
 .blog-post h1 {
   font-size: var(--font-size-3xl);
   margin-bottom: var(--space-xs);
@@ -463,6 +461,25 @@ footer,
   color: var(--color-text-2);
 }
 
+/* ✅ GLOBAL FEEDBACK MESSAGE STYLES */
+.message {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  display: none;
+}
+
+.message.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.message.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
 /* 📱 Responsive */
 @media (max-width: 900px) {
   .layout {
@@ -497,22 +514,4 @@ footer,
   .project-list {
     grid-template-columns: 1fr;
   }
-  .message {
-  margin-bottom: 1rem;
-  padding: 0.75rem;
-  border-radius: 6px;
-  font-weight: 600;
-  display: none; /* hidden until JS shows it */
-}
-
-.message.success {
-  background: #d4edda;
-  color: #155724;
-}
-
-.message.error {
-  background: #f8d7da;
-  color: #721c24;
-}
-
 }
