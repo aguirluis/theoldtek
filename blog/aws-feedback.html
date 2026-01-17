@@ -86,3 +86,250 @@
             <li><a href="#api-gateway">Step 4 — Create the API Gateway Endpoint</a></li>
             <li><a href="#monitoring">Step 5 — Add Monitoring</a></li>
             <li><a href="#cicd">Step 6 — Add CI/CD</a></li>
+            <li><a href="#why-it-works">Why This Architecture Works</a></li>
+            <li><a href="#final-thoughts">Final Thoughts</a></li>
+          </ul>
+        </section>
+
+        <!-- Overview -->
+        <section id="overview">
+          <h2>Project Overview</h2>
+          <p>
+            While studying for the AWS Associate certification, I wanted a hands‑on project that used real AWS services without requiring servers or complex infrastructure.  
+            The result was a fully serverless feedback‑collection app powered by:
+          </p>
+
+          <ul class="checklist">
+            <li><strong>AWS Lambda</strong></li>
+            <li><strong>API Gateway</strong></li>
+            <li><strong>DynamoDB</strong></li>
+            <li><strong>GitHub Pages</strong> for the frontend</li>
+          </ul>
+        </section>
+
+        <!-- Architecture -->
+        <section id="architecture">
+          <h2>Architecture Diagram</h2>
+
+          <pre><code>
++------------------+        POST /feedback        +------------------+
+|   GitHub Pages   | ---------------------------> |   API Gateway    |
+|  Static Frontend |                              |   REST Endpoint  |
++------------------+                              +---------+--------+
+                                                             |
+                                                             v
+                                                   +---------+--------+
+                                                   |      Lambda      |
+                                                   |  Node.js Handler |
+                                                   +---------+--------+
+                                                             |
+                                                             v
+                                                   +---------+--------+
+                                                   |    DynamoDB      |
+                                                   |  FeedbackTable   |
+                                                   +------------------+
+          </code></pre>
+
+          <p>A clean, event‑driven pipeline with no servers to manage.</p>
+        </section>
+
+        <!-- Step 1 -->
+        <section id="frontend">
+          <h2>Step 1 — Build the Frontend</h2>
+          <p>The frontend is a simple HTML/JS form hosted on GitHub Pages.</p>
+
+          <h3>Example HTML Form</h3>
+          <pre><code class="language-html">
+<form id="feedbackForm">
+  <label>Name:</label>
+  <input type="text" id="name" required>
+
+  <label>Feedback:</label>
+  <textarea id="message" required></textarea>
+
+  <button type="submit">Submit</button>
+</form>
+
+<p id="status"></p>
+          </code></pre>
+
+          <h3>JavaScript to Send Data to API Gateway</h3>
+          <pre><code class="language-js">
+document.getElementById("feedbackForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const payload = {
+    name: document.getElementById("name").value,
+    message: document.getElementById("message").value
+  };
+
+  const response = await fetch("YOUR_API_GATEWAY_URL", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  const result = await response.json();
+  document.getElementById("status").innerText = result.message;
+});
+          </code></pre>
+        </section>
+
+        <!-- Step 2 -->
+        <section id="database">
+          <h2>Step 2 — Create the Database</h2>
+          <p>Create a DynamoDB table with the following schema:</p>
+
+          <ul>
+            <li><strong>feedbackId</strong> — Partition Key</li>
+            <li><strong>name</strong> — String</li>
+            <li><strong>message</strong> — String</li>
+            <li><strong>timestamp</strong> — ISO timestamp</li>
+          </ul>
+        </section>
+
+        <!-- Step 3 -->
+        <section id="lambda">
+          <h2>Step 3 — Build the Lambda Function</h2>
+
+          <pre><code class="language-js">
+import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
+import { v4 as uuidv4 } from "uuid";
+
+const db = new DynamoDBClient({ region: "us-east-1" });
+
+export const handler = async (event) => {
+  const body = JSON.parse(event.body);
+
+  const item = {
+    feedbackId: { S: uuidv4() },
+    name: { S: body.name },
+    message: { S: body.message },
+    timestamp: { S: new Date().toISOString() }
+  };
+
+  await db.send(new PutItemCommand({
+    TableName: "FeedbackTable",
+    Item: item
+  }));
+
+  return {
+    statusCode: 200,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: "Feedback submitted successfully!" })
+  };
+};
+          </code></pre>
+        </section>
+
+        <!-- Step 4 -->
+        <section id="api-gateway">
+          <h2>Step 4 — Create the API Gateway Endpoint</h2>
+          <p>Configure a REST API with:</p>
+
+          <ul>
+            <li><strong>POST /feedback</strong> route</li>
+            <li><strong>Lambda Proxy Integration</strong></li>
+            <li><strong>CORS enabled</strong></li>
+          </ul>
+
+          <h3>Example CORS Headers</h3>
+          <pre><code>
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Methods: POST
+          </code></pre>
+        </section>
+
+        <!-- Step 5 -->
+        <section id="monitoring">
+          <h2>Step 5 — Add Monitoring</h2>
+          <p>Use CloudWatch to track:</p>
+
+          <ul>
+            <li>Lambda invocation count</li>
+            <li>Errors</li>
+            <li>Duration</li>
+            <li>DynamoDB read/write metrics</li>
+          </ul>
+        </section>
+
+        <!-- Step 6 -->
+        <section id="cicd">
+          <h2>Step 6 — Add CI/CD</h2>
+
+          <h3>Lambda Deployment Workflow</h3>
+          <pre><code class="language-yaml">
+name: Deploy Lambda
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install
+      - run: zip -r lambda.zip .
+      - run: aws lambda update-function-code --function-name FeedbackFunction --zip-file fileb://lambda.zip
+          </code></pre>
+
+          <h3>Frontend Deployment Workflow</h3>
+          <pre><code class="language-yaml">
+name: Deploy Frontend
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./"
+      - uses: actions/deploy-pages@v4
+          </code></pre>
+        </section>
+
+        <!-- Why It Works -->
+        <section id="why-it-works">
+          <h2>Why This Architecture Works</h2>
+
+          <ul>
+            <li><strong>Fully serverless:</strong> No EC2, no patching.</li>
+            <li><strong>Auto‑scaling:</strong> Lambda + API Gateway scale instantly.</li>
+            <li><strong>Cost‑effective:</strong> Most workloads stay in the free tier.</li>
+            <li><strong>Secure:</strong> IAM + API Gateway + DynamoDB permissions.</li>
+            <li><strong>Easy to extend:</strong> Add email alerts, analytics, dashboards, etc.</li>
+          </ul>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+          <h2>Final Thoughts</h2>
+          <p>
+            This project is a perfect introduction to serverless architecture. It teaches you how to connect a frontend to a backend, how to store data in DynamoDB, and how to deploy cloud functions — all without managing a single server.
+          </p>
+        </section>
+
+        <footer class="post-footer">
+          <p><a href="../blog.html">← Back to Blog</a></p>
+        </footer>
+
+      </article>
+
+      <footer class="site-footer">
+        <p>© 2025 TheOldTek | Built with GitHub Pages</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../js/theme.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+</html>
