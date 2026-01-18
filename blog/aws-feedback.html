@@ -111,24 +111,7 @@
         <section id="architecture">
           <h2>Architecture Diagram</h2>
    <img src="../img/aws-serverless-architecture-diagram.png" alt="Diagram" />
-          <pre><code>
-+------------------+        POST /feedback        +------------------+
-|   GitHub Pages   | ---------------------------> |   API Gateway    |
-|  Static Frontend |                              |   REST Endpoint  |
-+------------------+                              +---------+--------+
-                                                             |
-                                                             v
-                                                   +---------+--------+
-                                                   |      Lambda      |
-                                                   |  Node.js Handler |
-                                                   +---------+--------+
-                                                             |
-                                                             v
-                                                   +---------+--------+
-                                                   |    DynamoDB      |
-                                                   |  FeedbackTable   |
-                                                   +------------------+
-          </code></pre>
+
 
           <p>A clean, event‑driven pipeline with no servers to manage.</p>
         </section>
