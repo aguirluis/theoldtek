@@ -116,6 +116,33 @@
         <section id="architecture">
           <h2>Architecture Diagram</h2>
    <img src="../img/aws-serverless-architecture-diagram.png" alt="Diagram" />
+ <h2>Architecture overview</h2>
+        <p>
+          The architecture follows a clean, event‑driven pattern:
+        </p>
+        <ul>
+          <li><strong>Frontend:</strong> Static HTML/JavaScript form hosted on GitHub Pages.</li>
+          <li><strong>API Gateway:</strong> Exposes a public HTTPS endpoint for feedback submissions.</li>
+          <li><strong>Lambda:</strong> Validates and processes incoming requests, then writes to DynamoDB.</li>
+          <li><strong>DynamoDB:</strong> Stores feedback entries with a unique ID and timestamp.</li>
+        </ul>
+        <p>
+          This design is fully managed, highly scalable, and ideal for small applications, prototypes, or learning
+          projects.
+        </p>
+      </section>
+
+      <section id="frontend">
+        <h2>Step 1 – Build the frontend</h2>
+        <p>
+          The frontend is a minimal HTML form enhanced with JavaScript to send feedback to the API Gateway endpoint.
+          Hosting it on GitHub Pages keeps deployment simple and free.
+        </p>
+
+        <div class="frontend-demo">
+          <strong>Tip:</strong> You can host this page directly in a GitHub repository and enable
+          <code>GitHub Pages</code> to serve it as a static site.
+        </div>
 
 
           <p>A clean, event‑driven pipeline with no servers to manage.</p>
