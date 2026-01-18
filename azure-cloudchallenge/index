@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS Serverless Feedback App | TheOldTek</title>
+  <meta name="description" content="AWS Serverless Feedback App built using Lambda, API Gateway, DynamoDB, and CloudWatch." />
+  <link rel="icon" type="image/png" href="../img/favicon.png" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body> <main class="wrapper"> <div class="badge">
+<span class="dot"></span>
+<span>Project in Progress</span>
+</div> 
+<h1>Something good is being built</h1> 
+<p> This project is currently under active development. Check back soon to see the finished version and new features. </p> 
+<div class="progress-bar">
+<div class="progress-fill"></div> </div>
+<div class="eta">Status: 65% complete</div> 
+<div class="footer"> &copy; <span id="year"></span> Your Name or Brand </div> 
+</main>
+<script> // Set current year automatically document.getElementById("year").textContent = new Date().getFullYear(); </script>
+</body>
+</html>
