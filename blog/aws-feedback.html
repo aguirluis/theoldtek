@@ -250,22 +250,16 @@ document.getElementById("feedbackForm").addEventListener("submit", async (e) => 
             </tr>
           </tbody>
         </table>
-
-          <h2>Step 2 — Create the Database</h2>
-          <p>Create a DynamoDB table with the following schema:</p>
-
-          <ul>
-            <li><strong>feedbackId</strong> — Partition Key</li>
-            <li><strong>name</strong> — String</li>
-            <li><strong>message</strong> — String</li>
-            <li><strong>timestamp</strong> — ISO timestamp</li>
-          </ul>
-        </section>
-
+        <p>
+          You can start with on‑demand capacity mode, which is perfect for unpredictable or low‑volume workloads.
+        </p>
         <!-- Step 3 -->
         <section id="lambda">
           <h2>Step 3 — Build the Lambda Function</h2>
-
+     <p>
+          The Lambda function receives the HTTP request from API Gateway, parses the JSON body, and writes the feedback
+          to DynamoDB.
+        </p>
           <pre><code class="language-js">
 import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
 import { v4 as uuidv4 } from "uuid";
@@ -300,7 +294,10 @@ export const handler = async (event) => {
         <section id="api-gateway">
           <h2>Step 4 — Create the API Gateway Endpoint</h2>
           <p>Configure a REST API with:</p>
-
+  <p>
+          Create a REST API (or HTTP API) in API Gateway and connect it to your Lambda function using Lambda proxy
+          integration.
+        </p>
           <ul>
             <li><strong>POST /feedback</strong> route</li>
             <li><strong>Lambda Proxy Integration</strong></li>
@@ -319,19 +316,28 @@ Access-Control-Allow-Methods: POST
         <section id="monitoring">
           <h2>Step 5 — Add Monitoring</h2>
           <p>Use CloudWatch to track:</p>
-
+     <p>
+          Once everything is wired up, use Amazon CloudWatch to monitor:
+        </p>
           <ul>
             <li>Lambda invocation count</li>
             <li>Errors</li>
             <li>Duration</li>
             <li>DynamoDB read/write metrics</li>
           </ul>
+                  <p>
+          This visibility helps you catch misconfigurations early and understand how your application behaves under
+          real traffic.
+        </p>
         </section>
 
         <!-- Step 6 -->
         <section id="cicd">
           <h2>Step 6 — Add CI/CD</h2>
-
+      <p>
+          To streamline deployments, you can use GitHub Actions to automatically deploy both the Lambda function and the
+          frontend whenever you push changes to your main branch.
+        </p>
           <h3>Lambda Deployment Workflow</h3>
           <pre><code class="language-yaml">
 name: Deploy Lambda
@@ -372,24 +378,31 @@ jobs:
 
         <!-- Why It Works -->
         <section id="why-it-works">
-          <h2>Why This Architecture Works</h2>
+            <h2>Why this architecture works well</h2>
+        <ul>
+          <li><strong>Fully serverless:</strong> No servers to patch, scale, or maintain.</li>
+          <li><strong>Auto‑scaling:</strong> Lambda and API Gateway scale automatically with incoming traffic.</li>
+          <li><strong>Cost‑efficient:</strong> For low to moderate usage, most of this stack fits comfortably in the AWS Free Tier.</li>
+          <li><strong>Secure by design:</strong> IAM roles, managed services, and API Gateway provide strong security primitives.</li>
+          <li><strong>Easy to extend:</strong> You can add email notifications, analytics, dashboards, or authentication later.</li>
+        </ul>
+      </section>
 
-          <ul>
-            <li><strong>Fully serverless:</strong> No EC2, no patching.</li>
-            <li><strong>Auto‑scaling:</strong> Lambda + API Gateway scale instantly.</li>
-            <li><strong>Cost‑effective:</strong> Most workloads stay in the free tier.</li>
-            <li><strong>Secure:</strong> IAM + API Gateway + DynamoDB permissions.</li>
-            <li><strong>Easy to extend:</strong> Add email alerts, analytics, dashboards, etc.</li>
-          </ul>
-        </section>
+      <section>
+        <h2>Next steps</h2>
+        <p>Once the basic feedback form is working, here are some ideas to take it further:</p>
+        <ul>
+          <li>Send email notifications using Amazon SES when new feedback is submitted.</li>
+          <li>Add a protected admin page to view feedback entries from DynamoDB.</li>
+          <li>Integrate Amazon Cognito to require sign‑in before submitting feedback.</li>
+          <li>Add CloudWatch dashboards for a visual overview of traffic and errors.</li>
+        </ul>
+      </section>
 
-        <!-- Final Thoughts -->
-        <section id="final-thoughts">
-          <h2>Final Thoughts</h2>
-          <p>
-            This project is a perfect introduction to serverless architecture. It teaches you how to connect a frontend to a backend, how to store data in DynamoDB, and how to deploy cloud functions — all without managing a single server.
-          </p>
-        </section>
+      <p class="tagline">
+        Built as a learning project while preparing for the <strong>AWS Associate</strong> certification—small in scope,
+        but packed with real‑world patterns you can reuse in larger systems.
+      </p>
 
         <footer class="post-footer">
           <p><a href="../blog.html">← Back to Blog</a></p>
