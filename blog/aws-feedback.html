@@ -208,6 +208,49 @@ document.getElementById("feedbackForm").addEventListener("submit", async (e) => 
 
         <!-- Step 2 -->
         <section id="database">
+           <h2>Step 2 – Create the DynamoDB table</h2>
+        <p>
+          Next, create a DynamoDB table to store feedback entries. The schema is intentionally simple and optimized for
+          write‑heavy workloads.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>feedbackId</code></td>
+              <td>String (Partition key)</td>
+              <td>Unique identifier for each feedback entry.</td>
+            </tr>
+            <tr>
+              <td><code>name</code></td>
+              <td>String</td>
+              <td>User’s name.</td>
+            </tr>
+            <tr>
+              <td><code>email</code></td>
+              <td>String</td>
+              <td>User’s email address.</td>
+            </tr>
+            <tr>
+              <td><code>message</code></td>
+              <td>String</td>
+              <td>Feedback content.</td>
+            </tr>
+            <tr>
+              <td><code>timestamp</code></td>
+              <td>String</td>
+              <td>ISO‑8601 timestamp of submission.</td>
+            </tr>
+          </tbody>
+        </table>
+
           <h2>Step 2 — Create the Database</h2>
           <p>Create a DynamoDB table with the following schema:</p>
 
