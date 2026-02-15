@@ -6,7 +6,14 @@
   <title>AWS Serverless Feedback App | TheOldTek</title>
   <meta name="description" content="AWS Serverless Feedback App built using Lambda, API Gateway, DynamoDB, and CloudWatch." />
   <link rel="icon" type="image/png" href="../img/favicon.png" />
+
+  <!-- Global Styles -->
   <link rel="stylesheet" href="../css/styles.css" />
+
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="../css/aws-feedback.css" />
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
@@ -20,7 +27,7 @@
           <div class="profile-img">
             <img src="../img/avatar.png" alt="Luis E. Aguirre avatar" />
           </div>
-          <h1>TheOldTek</h1>
+          <h1 class="site-title">TheOldTek</h1>
           <p class="tagline">Cloud System Admin • Cybersecurity • Home Lab Architect</p>
         </div>
 
@@ -50,6 +57,7 @@
     <div class="main-area">
       <main class="content">
 
+        <!-- Header -->
         <header class="page-header">
           <h2>AWS Serverless Feedback App</h2>
           <p class="intro">
@@ -57,22 +65,26 @@
           </p>
         </header>
 
+        <!-- Architecture Overview -->
         <section class="card">
           <h3>Architecture Overview</h3>
+
           <p>This project demonstrates a clean, event‑driven serverless pattern using AWS managed services:</p>
 
           <ul class="tech-list">
             <li>AWS Lambda</li>
-            <li>API Gateway</li>
-            <li>DynamoDB</li>
-            <li>CloudWatch Monitoring</li>
+            <li>Amazon API Gateway</li>
+            <li>Amazon DynamoDB</li>
+            <li>Amazon CloudWatch</li>
           </ul>
 
           <p>
-            When a user submits the form below, the data is sent to an API Gateway endpoint, processed by a Lambda function, and stored in DynamoDB. CloudWatch provides logging and observability.
+            When a user submits the form below, the data is sent to an API Gateway endpoint, processed by a Lambda function,
+            and stored in DynamoDB. CloudWatch provides logging and observability.
           </p>
         </section>
 
+        <!-- Feedback Form -->
         <section class="card">
           <h3>Submit Feedback</h3>
 
@@ -93,12 +105,13 @@
               <textarea id="message" rows="4" required></textarea>
             </div>
 
-            <button type="submit" class="btn-primary">Submit</button>
+            <button type="submit">Submit</button>
 
             <p id="status" class="message"></p>
           </form>
         </section>
 
+        <!-- Links -->
         <section class="links">
           <p><a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Home</a></p>
           <p><a href="../blog/aws-feedback.html"><i class="fas fa-book-open"></i> Read Blog Post</a></p>
