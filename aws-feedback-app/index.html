@@ -50,53 +50,60 @@
     <div class="main-area">
       <main class="content">
 
-        <h2>AWS Serverless Feedback App</h2>
+        <header class="page-header">
+          <h2>AWS Serverless Feedback App</h2>
+          <p class="intro">
+            A fully serverless feedback submission workflow built using AWS Lambda, API Gateway, DynamoDB, and CloudWatch.
+          </p>
+        </header>
 
-        <p>This project demonstrates a fully serverless feedback submission system built using:</p>
+        <section class="card">
+          <h3>Architecture Overview</h3>
+          <p>This project demonstrates a clean, event‑driven serverless pattern using AWS managed services:</p>
 
-        <ul>
-          <li>AWS Lambda</li>
-          <li>API Gateway</li>
-          <li>DynamoDB</li>
-          <li>CloudWatch Monitoring</li>
-        </ul>
+          <ul class="tech-list">
+            <li>AWS Lambda</li>
+            <li>API Gateway</li>
+            <li>DynamoDB</li>
+            <li>CloudWatch Monitoring</li>
+          </ul>
 
-        <p>
-          The form below sends user feedback directly to an AWS API Gateway endpoint, which triggers a Lambda function and stores the data in DynamoDB.
-        </p>
-<h3>Submit Feedback</h3>
+          <p>
+            When a user submits the form below, the data is sent to an API Gateway endpoint, processed by a Lambda function, and stored in DynamoDB. CloudWatch provides logging and observability.
+          </p>
+        </section>
 
-<div class="aws-feedback-app">
-  <form id="feedbackForm" class="project-form">
+        <section class="card">
+          <h3>Submit Feedback</h3>
 
-    <div class="form-group">
-      <label for="name">Name</label><br>
-      <input type="text" id="name" required />
-    </div>
+          <form id="feedbackForm" class="project-form">
 
-    <div class="form-group">
-      <label for="email">Email</label><br>
-      <input type="email" id="email" required />
-    </div>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" required />
+            </div>
 
-    <p id="status" class="message"></p>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" required />
+            </div>
 
-    <div class="form-group">
-      <label for="message">Feedback Message</label><br>
-      <textarea id="message" rows="4" required></textarea>
-    </div>
+            <div class="form-group">
+              <label for="message">Feedback Message</label>
+              <textarea id="message" rows="4" required></textarea>
+            </div>
 
-    <button type="submit">Submit</button>
-  </form>
-</div>
+            <button type="submit" class="btn-primary">Submit</button>
 
+            <p id="status" class="message"></p>
+          </form>
+        </section>
 
-
-        <div class="links" style="margin-top: 2rem;">
+        <section class="links">
           <p><a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Home</a></p>
           <p><a href="../blog/aws-feedback.html"><i class="fas fa-book-open"></i> Read Blog Post</a></p>
           <p><a href="https://github.com/aguirluis/feedback-app" target="_blank"><i class="fab fa-github"></i> Source Code</a></p>
-        </div>
+        </section>
 
       </main>
 
