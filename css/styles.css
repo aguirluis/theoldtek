@@ -433,6 +433,97 @@ button:focus {
   color: var(--color-accent);
 }
 
+/* 📬 Contact Page Enhancements */
+.contact-section {
+  margin-bottom: var(--space-xl);
+}
+
+.contact-section h3 {
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-lg);
+  color: var(--color-accent);
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  background-color: var(--color-bg-elevated);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-border);
+  max-width: 600px;
+  margin-top: var(--space-md);
+}
+
+.contact-form label {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-1);
+  color: var(--color-text-1);
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+  outline: none;
+}
+
+.contact-form button {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.contact-form button:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-strong);
+}
+
+.contact-form button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .contact-form {
+  background-color: var(--color-bg-elevated);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .contact-form input,
+[data-theme="dark"] .contact-form textarea {
+  background-color: var(--color-bg-2);
+  color: var(--color-text-1);
+  border-color: var(--color-border);
+}
+
 /* 🧾 Footer */
 footer,
 .site-footer,
